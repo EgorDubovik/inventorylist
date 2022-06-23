@@ -23,41 +23,6 @@
                             class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span></a>
                 </li>
-
-                @if(Auth::check())
-                    @if(Auth::user()->is_mover)
-                        <li class="slide">
-                            <a class="side-menu__item has-link" data-bs-toggle="slide" href="/order/my/orders"><i
-                                    class="side-menu__icon fa fa-list"></i><span
-                                    class="side-menu__label">My orders</span></a>
-                        </li>
-                    @endif
-                    @if(Auth::user()->is_driver)
-                        <li class="slide">
-                            <a class="side-menu__item has-link" data-bs-toggle="slide" href="/application/my/applications"><i
-                                    class="side-menu__icon fa fa-address-card-o"></i><span
-                                    class="side-menu__label">My applications</span></a>
-                        </li>
-                    @endif
-                    <li class="slide">
-                        <a class="side-menu__item has-link" data-bs-toggle="slide" href="/deal/my/deals"><i
-                                class="side-menu__icon fa fa-diamond"></i><span
-                                class="side-menu__label">My Deals</span></a>
-                    </li>
-                    <li class="slide">
-                        <a class="side-menu__item has-link" data-bs-toggle="slide" href="/profile/list"><i
-                                class="side-menu__icon fa fa-truck"></i><span
-                                class="side-menu__label">Company</span></a>
-                    </li>
-
-                @else
-                    <li style="text-align: center; padding-top: 30px">
-                        If you whant this order, ypu need:<br/><br/>
-                        <a href="/auth/login">Login</a>
-                        <br/>or<br/>
-                        <a href="auth/register">Registration</a>
-                    </li>
-                @endif
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                                                            width="24" height="24" viewBox="0 0 24 24">

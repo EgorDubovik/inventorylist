@@ -25,6 +25,6 @@ Route::prefix("auth")->group(function(){
 
 Route::group(['middleware' => ['auth']],function (){
    Route::get('/',function(){
-       return "dashboard";
+       return view('dashboard');
    });
 });
