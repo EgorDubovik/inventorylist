@@ -3,7 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +26,11 @@ Route::prefix("auth")->group(function(){
 Route::group(['middleware' => ['auth']],function (){
    Route::get('/',function(){
        return view('dashboard');
+   });
+
+   Route::prefix('profile')->group(function (){
+      Route::get('/',[ProfileController::class, 'index'])->name('profile');
+      Route::post('/edit',[ProfileController::class, 'update']);
+      Route::post('/change/password', [ProfileController::class,'change_password']);
    });
 });
