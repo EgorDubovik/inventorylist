@@ -6,6 +6,7 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\InventoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,5 +41,13 @@ Route::group(['middleware' => ['auth']],function (){
        Route::get('/', [UserController::class, 'list'])->name('users');
        Route::get('/create', [UserController::class, 'create']);
        Route::post('/create', [UserController::class, 'store']);
+   });
+
+   Route::prefix('inventory')->group(function (){
+       Route::get('/category', [InventoryController::class, 'view_categorys']);
+       Route::get('/category/create', [InventoryController::class, 'create_inventory_category']);
+       Route::post('/category/create', [InventoryController::class, 'store_inventory_category']);
+       Route::get('/list/{category}', [InventoryController::class, 'list']);
+
    });
 });
