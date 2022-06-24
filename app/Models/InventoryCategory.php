@@ -13,6 +13,7 @@ class InventoryCategory extends Model
 
     protected $fillable = [
         'user_id',
+        'company_id',
         'customer_name',
         'customer_address',
     ];

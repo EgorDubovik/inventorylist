@@ -29,6 +29,7 @@ class InventoryController extends Controller
 
         $category = InventoryCategory::create([
             'user_id' => Auth::user()->id,
+            'company_id' => Auth::user()->company_id,
             'customer_name' => $request->customer_name,
             'customer_address' => $request->customer_address,
         ]);
@@ -37,6 +38,7 @@ class InventoryController extends Controller
     }
 
     public function list(Request $request, InventoryCategory $category){
+
 
         return view('inventory.list');
     }
