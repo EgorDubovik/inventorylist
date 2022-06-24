@@ -40,6 +40,6 @@ class InventoryController extends Controller
     public function list(Request $request, InventoryCategory $category){
 
 
-        return view('inventory.list');
+        return view('inventory.list',['category' => $category]);
     }
 }

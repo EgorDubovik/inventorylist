@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\InventoryCategory;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -41,6 +42,13 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('create-inventory-category',function (User $user){
             $roles = Auth::user()->roles->pluck('role')->toArray();
             if (in_array(Role::ADMIN, $roles) || in_array(Role::FORMAN, $roles))
+                return true;
+            return false;
+        });
+
+        Gate::define('create-inventory-list', function (User $user, InventoryCategory $category){
+            $roles = Auth::user()->roles->pluck('role')->toArray();
+            if (in_array(Role::ADMIN, $roles) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
                 return true;
             return false;
         });

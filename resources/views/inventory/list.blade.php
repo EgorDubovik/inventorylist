@@ -20,7 +20,10 @@
                 @include('layout/success-message',['status' => 'successful'])
                 <div class="card">
                     <div class="card-header">
-                        Users list <a href="/users/create" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Add new user</a>
+                        Inventory list
+                        @can('create-inventory-list', $category)
+                            <a href="/users/create" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Add new user</a>
+                        @endcan
                     </div>
                     <div class="card-body">
                         <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
