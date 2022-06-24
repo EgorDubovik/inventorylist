@@ -19,9 +19,15 @@ class Role extends Model
     public const HELPER = 4;
 
     public const ROLES = ['Admin','Forman', 'Driver', 'Helper'];
+    public const ROLES_ID = [1, 2, 3, 4];
 
     protected $fillable = [
         'user_id',
         'role',
+    ];
+
+    protected $hidden = [
+        'id',
+        'user_id',
     ];
 }

@@ -23,6 +23,13 @@
                             class="side-menu__icon fe fe-home"></i><span
                             class="side-menu__label">Dashboard</span></a>
                 </li>
+                @can('view-users-list')
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="/users"><i
+                            class="side-menu__icon fe fe-user"></i><span
+                            class="side-menu__label">Users</span></a>
+                </li>
+                @endcan
             </ul>
             <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
                                                            width="24" height="24" viewBox="0 0 24 24">

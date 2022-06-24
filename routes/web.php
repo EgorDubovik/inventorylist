@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,5 +34,11 @@ Route::group(['middleware' => ['auth']],function (){
       Route::get('/',[ProfileController::class, 'index'])->name('profile');
       Route::post('/edit',[ProfileController::class, 'update']);
       Route::post('/change/password', [ProfileController::class,'change_password']);
+   });
+
+   Route::prefix('users')->group(function (){
+       Route::get('/', [UserController::class, 'list'])->name('users');
+       Route::get('/create', [UserController::class, 'create']);
+       Route::post('/create', [UserController::class, 'store']);
    });
 });
