@@ -37,5 +37,12 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('create-users',function (User $user){
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });
+
+        Gate::define('create-inventory-category',function (User $user){
+            $roles = Auth::user()->roles->pluck('role')->toArray();
+            if (in_array(Role::ADMIN, $roles) || in_array(Role::FORMAN, $roles))
+                return true;
+            return false;
+        });
     }
 }

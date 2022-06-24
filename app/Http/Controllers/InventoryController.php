@@ -14,11 +14,14 @@ class InventoryController extends Controller
     }
 
     public function create_inventory_category(){
+        $this->authorize('create-inventory-category');
 
         return view('inventory.category-create');
     }
 
     public function store_inventory_category(Request $request){
+        $this->authorize('create-inventory-category');
+
         $validated = $request->validate([
             'customer_name' => 'required',
             'customer_address' => 'required',
