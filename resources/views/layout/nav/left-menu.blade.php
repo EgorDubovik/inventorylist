@@ -31,7 +31,7 @@
                 </li>
                 @endcan
                 <li class="slide">
-                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="/inventory/category"><i
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('categories')}}"><i
                             class="side-menu__icon fe fe-list"></i><span
                             class="side-menu__label">Inventory list</span></a>
                 </li>

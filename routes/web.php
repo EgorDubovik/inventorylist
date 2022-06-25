@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\InventoryCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,12 +44,16 @@ Route::group(['middleware' => ['auth']],function (){
        Route::post('/create', [UserController::class, 'store']);
    });
 
-   Route::prefix('inventory')->group(function (){
-       Route::get('/category', [InventoryController::class, 'view_categorys']);
-       Route::get('/category/create', [InventoryController::class, 'create_inventory_category']);
-       Route::post('/category/create', [InventoryController::class, 'store_inventory_category']);
-       Route::delete('/category/remove/{category}', [InventoryController::class,'destroy_category']);
-       Route::get('/list/{category}', [InventoryController::class, 'list']);
+   Route::prefix('/category')->group(function (){
+       Route::get('/', [InventoryCategoryController::class, 'index'])->name('categories');
+       Route::get('/create', [InventoryCategoryController::class, 'create']);
+       Route::post('/create', [InventoryCategoryController::class, 'store']);
+       Route::delete('/remove/{category}', [InventoryCategoryController::class,'destroy']);
+       Route::get('/edit/{category}', [InventoryCategoryController::class, 'edit']);
+       Route::post('/edit/{category}', [InventoryCategoryController::class, 'update']);
+   });
 
+   Route::prefix('inventory')->group(function (){
+       Route::get('/list/{category}', [InventoryController::class, 'list']);
    });
 });

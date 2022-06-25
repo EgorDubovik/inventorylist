@@ -22,7 +22,7 @@
                     <div class="card-header">
                         Inventory category list
                         @can('create-inventory-category')
-                            <a href="/inventory/category/create" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Create new inventory category</a>
+                            <a href="/category/create" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Create new inventory category</a>
                         @endcan
                     </div>
                     <div class="card-body">
@@ -34,7 +34,7 @@
                                 <th>Created by</th>
                                 <th>Customer name</th>
                                 <th>Customer address</th>
-                                <th>Actions</th>
+                                <th style="width: 270px">Actions</th>
                             </tr>
                             </thead>
                             @foreach($category as $c)
@@ -46,10 +46,12 @@
                                     <td>{{$c->customer_address}}</td>
                                     <td>
 
-                                        <form action="/inventory/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
+                                        <form action="/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
                                             @csrf
                                             @method('delete')
                                             <a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> view</a>
+                                            <a href="/category/edit/{{$c->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> edit</a>
+
                                             @can('destroy-category', $c)
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> remove</button>
                                             @endcan
