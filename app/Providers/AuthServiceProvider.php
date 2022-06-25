@@ -46,9 +46,16 @@ class AuthServiceProvider extends ServiceProvider
             return false;
         });
 
+        Gate::define('destroy-category', function (User $user, InventoryCategory $category) {
+            $roles = Auth::user()->roles->pluck('role')->toArray();
+            if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
+                return true;
+            return false;
+        });
+
         Gate::define('create-inventory-list', function (User $user, InventoryCategory $category){
             $roles = Auth::user()->roles->pluck('role')->toArray();
-            if (in_array(Role::ADMIN, $roles) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
+            if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
                 return true;
             return false;
         });

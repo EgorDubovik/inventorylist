@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth']],function (){
        Route::get('/category', [InventoryController::class, 'view_categorys']);
        Route::get('/category/create', [InventoryController::class, 'create_inventory_category']);
        Route::post('/category/create', [InventoryController::class, 'store_inventory_category']);
+       Route::delete('/category/remove/{category}', [InventoryController::class,'destroy_category']);
        Route::get('/list/{category}', [InventoryController::class, 'list']);
 
    });

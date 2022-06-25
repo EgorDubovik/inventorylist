@@ -44,7 +44,18 @@
                                     <td>{{$c->creater->name}}</td>
                                     <td>{{$c->customer_name}}</td>
                                     <td>{{$c->customer_address}}</td>
-                                    <td><a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> view</a> </td>
+                                    <td>
+
+                                        <form action="/inventory/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
+                                            @csrf
+                                            @method('delete')
+                                            <a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> view</a>
+                                            @can('destroy-category', $c)
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> remove</button>
+                                            @endcan
+                                        </form>
+
+                                    </td>
                                 </tr>
                             @endforeach
 
@@ -55,3 +66,14 @@
         </div>
     </div>
 @stop
+
+@section('scripts')
+    <script>
+        function confirm_remove(f){
+            if(confirm('Are you sure ?')){
+                f.submit();
+            }
+
+        }
+    </script>
+@endsection

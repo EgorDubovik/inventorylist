@@ -10,7 +10,7 @@ class InventoryController extends Controller
 {
     public function view_categorys(){
 
-        $category = InventoryCategory::where('company_id',Auth::user()->company_id)->get();
+        $category = InventoryCategory::where('company_id',Auth::user()->company_id)->orderByDesc('created_at') ->get();
         return view('inventory.category-list', ['category' => $category]);
     }
 
@@ -38,8 +38,15 @@ class InventoryController extends Controller
         return redirect('/inventory/list/'.$category->id)->with('successful', 'Inventory category hass bed created successful');
     }
 
-    public function list(Request $request, InventoryCategory $category){
+    public function destroy_category(InventoryCategory $category){
+        $this->authorize('destroy-category', $category);
 
+        $category->delete();
+        return redirect('/inventory/category')->with('successful', 'Category has been removed successful');
+
+    }
+
+    public function list(Request $request, InventoryCategory $category){
 
         return view('inventory.list',['category' => $category]);
     }
