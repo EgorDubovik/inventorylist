@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class InventoryCategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->authorizeResource(InventoryCategory::class,'category');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,8 +32,6 @@ class InventoryCategoryController extends Controller
      */
     public function create()
     {
-        $this->authorize('create-inventory-category');
-
         return view('inventory.category-create');
     }
 
@@ -39,8 +43,6 @@ class InventoryCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create-inventory-category');
-
         $validated = $request->validate([
             'customer_name' => 'required',
             'customer_address' => 'required',
@@ -108,8 +110,6 @@ class InventoryCategoryController extends Controller
      */
     public function destroy(InventoryCategory $category)
     {
-        $this->authorize('destroy-category', $category);
-
         $category->delete();
         return redirect('/category')->with('successful', 'Category has been removed successful');
     }

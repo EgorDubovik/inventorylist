@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\InventoryCategory;
 use App\Models\Role;
 use App\Models\User;
+use App\Policies\InventoryCategoryPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -18,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Models\Model' => 'App\Policies\ModelPolicy',
+        InventoryCategory::class => InventoryCategoryPolicy::class,
     ];
 
     /**
@@ -29,28 +31,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-
-
         Gate::define('view-users-list',function (User $user){
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });
 
         Gate::define('create-users',function (User $user){
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
-        });
-
-        Gate::define('create-inventory-category',function (User $user){
-            $roles = Auth::user()->roles->pluck('role')->toArray();
-            if (in_array(Role::ADMIN, $roles) || in_array(Role::FORMAN, $roles))
-                return true;
-            return false;
-        });
-
-        Gate::define('destroy-category', function (User $user, InventoryCategory $category) {
-            $roles = Auth::user()->roles->pluck('role')->toArray();
-            if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
-                return true;
-            return false;
         });
 
         Gate::define('create-inventory-list', function (User $user, InventoryCategory $category){

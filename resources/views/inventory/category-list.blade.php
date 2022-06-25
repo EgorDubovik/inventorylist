@@ -21,7 +21,7 @@
                 <div class="card">
                     <div class="card-header">
                         Inventory category list
-                        @can('create-inventory-category')
+                        @can('create', \App\Models\InventoryCategory::class)
                             <a href="/category/create" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Create new inventory category</a>
                         @endcan
                     </div>
@@ -50,9 +50,11 @@
                                             @csrf
                                             @method('delete')
                                             <a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> view</a>
-                                            <a href="/category/edit/{{$c->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> edit</a>
 
-                                            @can('destroy-category', $c)
+                                            @can('update', $c)
+                                            <a href="/category/edit/{{$c->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> edit</a>
+                                            @endcan
+                                            @can('delete', $c)
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> remove</button>
                                             @endcan
                                         </form>
