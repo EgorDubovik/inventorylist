@@ -10,7 +10,8 @@ class InventoryController extends Controller
 {
     public function view_categorys(){
 
-        return view('inventory.category-list');
+        $category = InventoryCategory::where('company_id',Auth::user()->company_id)->get();
+        return view('inventory.category-list', ['category' => $category]);
     }
 
     public function create_inventory_category(){

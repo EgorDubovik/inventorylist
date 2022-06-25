@@ -31,14 +31,22 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Date create</th>
-                                <th>User name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Roles</th>
+                                <th>Created by</th>
+                                <th>Customer name</th>
+                                <th>Customer address</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
-
+                            @foreach($category as $c)
+                                <tr>
+                                    <td>{{$c->id}}</td>
+                                    <td>{{\Carbon\Carbon::parse($c->created_at)->diffForHumans()}}</td>
+                                    <td>{{$c->creater->name}}</td>
+                                    <td>{{$c->customer_name}}</td>
+                                    <td>{{$c->customer_address}}</td>
+                                    <td><a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> view</a> </td>
+                                </tr>
+                            @endforeach
 
                         </table>
                     </div>

@@ -29,12 +29,9 @@
                         <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Date create</th>
-                                <th>User name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Roles</th>
+                                <th>Stik number</th>
+                                <th>Furniture</th>
+                                <th>Condition</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
