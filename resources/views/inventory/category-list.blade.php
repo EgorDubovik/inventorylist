@@ -34,6 +34,7 @@
                                 <th>Created by</th>
                                 <th>Customer name</th>
                                 <th>Customer address</th>
+                                <th>Count items</th>
                                 <th style="width: 270px">Actions</th>
                             </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                     <td>{{$c->creater->name}}</td>
                                     <td>{{$c->customer_name}}</td>
                                     <td>{{$c->customer_address}}</td>
+                                    <td>{{$c->inventories->count()}}</td>
                                     <td>
 
                                         <form action="/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
