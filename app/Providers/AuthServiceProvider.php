@@ -45,6 +45,12 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             return false;
         });
+        Gate::define('update-inventory', function (User $user, InventoryCategory $category){
+            $roles = Auth::user()->roles->pluck('role')->toArray();
+            if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
+                return true;
+            return false;
+        });
 
 
     }

@@ -35,16 +35,25 @@
                                 <th>Stik number</th>
                                 <th>Furniture</th>
                                 <th>Condition</th>
-                                <th>Actions</th>
+                                <th style="width: 200px">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($category->inventories as $invetory)
+                            @foreach($category->inventories as $inventory)
                                 <tr>
-                                    <td>{{$invetory->number}}</td>
-                                    <td>{{$invetory->furniture_name}}</td>
-                                    <td>{{$invetory->condition}}</td>
-                                    <td></td>
+                                    <td>{{$inventory->number}}</td>
+                                    <td>{{$inventory->furniture_name}}</td>
+                                    <td>{{$inventory->condition}}</td>
+                                    <td>
+                                        @can('update-inventory', $category)
+                                            <form method="post" action="/inventory/destroy/{{$inventory->id}}" onsubmit="remove_item(this);return false;">
+                                                @csrf
+                                                @method('delete')
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#input-modal" class="btn btn-warning"><i class="fa fa-edit"></i> Edit </a>
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remove </button>
+                                            </form>
+                                        @endcan
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -54,12 +63,12 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="input-modal" aria-hidden="true" style="display: none;">
+    <div class="modal fade" id="input-modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content modal-content-demo">
                 <form method="post" action="/inventory/create">
                 <div class="modal-header">
-                    <h6 class="modal-title">New message to @mdo</h6>
+                    <h6 class="modal-title">New inventory item</h6>
                     <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -86,6 +95,10 @@
                             <label for="message-text" class="col-form-label">Furniture:</label>
                             <input type="text" class="form-control" id="furniture" name="furniture">
                         </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Furniture:</label>
+                        <input type="text" class="form-control" id="condition" name="condition" value="good">
+                    </div>
 
                 </div>
                 <div class="modal-footer">
@@ -96,4 +109,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function remove_item(f){
+            if(confirm('Are you sure?')){
+                f.submit()
+            }
+        }
+    </script>
 @stop

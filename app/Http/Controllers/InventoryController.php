@@ -36,10 +36,18 @@ class InventoryController extends Controller
             InventoryList::create([
                 'category_id' => $request->cid,
                 'number' => ($i+$request->label_number),
+                'condition' => $request->condition,
                 'furniture_name' => $request->furniture,
             ]);
         }
 
         return redirect()->route('inventory.list',['category' => $category->id]);
+    }
+
+    public function destroy(InventoryList $inventoryList){
+
+        $this->authorize('update-inventory', $inventoryList->category);
+        $inventoryList->delete();
+        return redirect()->route('inventory.list',['category' => $inventoryList->category->id]);
     }
 }

@@ -15,5 +15,10 @@ class InventoryList extends Model
         'category_id',
         'number',
         'furniture_name',
+        'condition',
     ];
+
+    public function category(){
+        return $this->belongsTo(InventoryCategory::class);
+    }
 }

@@ -56,5 +56,6 @@ Route::group(['middleware' => ['auth']],function (){
    Route::prefix('inventory')->group(function (){
        Route::get('/list/{category}', [InventoryController::class, 'index'])->name('inventory.list');
        Route::post('/create', [InventoryController::class, 'store']);
+       Route::delete('/destroy/{inventoryList}', [InventoryController::class, 'destroy']);
    });
 });
