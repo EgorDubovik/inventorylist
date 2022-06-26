@@ -45,9 +45,35 @@ class InventoryController extends Controller
     }
 
     public function destroy(InventoryList $inventoryList){
-
         $this->authorize('update-inventory', $inventoryList->category);
         $inventoryList->delete();
         return redirect()->route('inventory.list',['category' => $inventoryList->category->id]);
+    }
+
+    public function edit(InventoryList $inventory){
+        $this->authorize('update-inventory', $inventory->category);
+
+        return view('inventory.inventory-edit', ['inventory' => $inventory]);
+    }
+
+    public function update(Request $request, InventoryList $inventory){
+
+        $this->authorize('update-inventory', $inventory->category);
+        $validate = $request->validate([
+            'label_number' => 'required',
+            'furniture' => 'required',
+            'condition' => 'required',
+        ],[
+            'label_number.required' => 'Label number is required',
+            'furniture.required' => 'Furniture name is required',
+        ]);
+        $inventory->update([
+            'label_number' => $request->label_number,
+            'furniture_name' => $request->furniture,
+            'condition' => $request->condition,
+        ]);
+
+        return redirect()->route('inventory.list',['category' => $inventory->category->id]);
+
     }
 }

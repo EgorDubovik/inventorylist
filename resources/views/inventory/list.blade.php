@@ -49,7 +49,7 @@
                                             <form method="post" action="/inventory/destroy/{{$inventory->id}}" onsubmit="remove_item(this);return false;">
                                                 @csrf
                                                 @method('delete')
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#input-modal" class="btn btn-warning"><i class="fa fa-edit"></i> Edit </a>
+                                                <a href="/inventory/edit/{{$inventory->id}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit </a>
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Remove </button>
                                             </form>
                                         @endcan
