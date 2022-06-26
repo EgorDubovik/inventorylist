@@ -39,11 +39,13 @@ class AuthServiceProvider extends ServiceProvider
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });
 
-        Gate::define('create-inventory-list', function (User $user, InventoryCategory $category){
+        Gate::define('create-inventory', function (User $user, InventoryCategory $category){
             $roles = Auth::user()->roles->pluck('role')->toArray();
             if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
                 return true;
             return false;
         });
+
+
     }
 }

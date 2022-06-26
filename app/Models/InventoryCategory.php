@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\InventoryList;
 
 class InventoryCategory extends Model
 {
@@ -21,5 +22,9 @@ class InventoryCategory extends Model
 
     public function creater(){
         return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function inventories(){
+        return $this->hasMany(InventoryList::class,'category_id');
     }
 }
