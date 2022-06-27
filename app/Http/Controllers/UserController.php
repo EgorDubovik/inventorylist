@@ -16,6 +16,7 @@ class UserController extends Controller
 
         $users = User::where('company_id',Auth::user()->company_id)
             ->where('id','<>',Auth::user()->id)
+            ->where('active','1')
             ->get();
         return view('users.index',['users' => $users]);
     }
@@ -27,6 +28,8 @@ class UserController extends Controller
     }
 
     public function store(UserStoreRequest $request){
+
+        $this->authorize('create-users');
 
         $user = User::create([
             'name' => $request->user_name,
@@ -75,5 +78,14 @@ class UserController extends Controller
         }
 
         return redirect()->route('users')->with('successful', 'User has been update successful');
+    }
+
+    public function destroy(User $user){
+
+        $this->authorize('update-users',$user);
+        $user->update([
+            'active' => 0,
+        ]);
+        return redirect()->route('users')->with('successful', 'User has been deactivate successful');
     }
 }

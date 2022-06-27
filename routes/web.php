@@ -27,7 +27,7 @@ Route::prefix("auth")->group(function(){
     Route::get('/logout', [LoginController::class,'destroy']);
 });
 
-Route::group(['middleware' => ['auth']],function (){
+Route::group(['middleware' => ['auth','active']],function (){
    Route::get('/',function(){
        return view('dashboard');
    });
@@ -44,6 +44,7 @@ Route::group(['middleware' => ['auth']],function (){
        Route::post('/create', [UserController::class, 'store']);
        Route::get('/update/{user}', [UserController::class, 'edit']);
        Route::post('/update/{user}', [UserController::class, 'update']);
+       Route::delete('/deactivate/{user}', [UserController::class,'destroy']);
    });
 
    Route::prefix('/category')->group(function (){

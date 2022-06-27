@@ -51,8 +51,14 @@
 
                                     </td>
                                     <td class="align-middle" style="width: 200px">
-                                        <a href="/users/remover/{{$user->id}}" class="btn btn-danger"><i class="fa fa-trash"></i> remove</a>
-                                        <a href="/users/update/{{$user->id}}" class="btn btn-warning"><i class="fe fe-edit"></i> update</a>
+                                        @can('update-users', $user)
+                                            <form method="post" action="/users/deactivate/{{$user->id}}" onsubmit="deactivate(this);return false;">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> remove</button>
+                                                <a href="/users/update/{{$user->id}}" class="btn btn-warning"><i class="fe fe-edit"></i> update</a>
+                                            </form>
+                                        @endcan
                                     </td>
 
                                 </tr>
@@ -64,4 +70,10 @@
             </div>
         </div>
     </div>
+    <script>
+        function deactivate(f){
+            if(confirm('Are you sure?'))
+                f.submit();
+        }
+    </script>
 @stop
