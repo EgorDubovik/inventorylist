@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -45,5 +46,34 @@ class UserController extends Controller
         }
 
         return redirect()->route('users')->with('successful','User has been added successful');
+    }
+
+    public function edit(User $user){
+
+        $this->authorize('update-users', $user);
+        $role_array = $user->roles->pluck('role')->toArray();
+
+        return view('users.update', ['user'=>$user, 'role_array' => $role_array]);
+    }
+    public function update(UserUpdateRequest $request,User $user){
+
+        $this->authorize('update-users', $user);
+
+        $user->update([
+           'name' => $request->user_name,
+           'email' => $request->email,
+           'phone' => $request->phone,
+        ]);
+        $user->roles()->delete();
+        foreach ($request->role as $role){
+            if(in_array($role, Role::ROLES_ID)){
+                Role::create([
+                    'user_id' => $user->id,
+                    'role' => $role,
+                ]);
+            }
+        }
+
+        return redirect()->route('users')->with('successful', 'User has been update successful');
     }
 }

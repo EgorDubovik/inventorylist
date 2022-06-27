@@ -35,6 +35,10 @@ class AuthServiceProvider extends ServiceProvider
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });
 
+        Gate::define('update-users', function (User $user, User $upuser){
+            return (in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) && Auth::user()->company_id == $upuser->company_id );
+        });
+
         Gate::define('create-users',function (User $user){
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });

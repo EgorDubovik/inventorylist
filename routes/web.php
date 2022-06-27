@@ -42,6 +42,8 @@ Route::group(['middleware' => ['auth']],function (){
        Route::get('/', [UserController::class, 'list'])->name('users');
        Route::get('/create', [UserController::class, 'create']);
        Route::post('/create', [UserController::class, 'store']);
+       Route::get('/update/{user}', [UserController::class, 'edit']);
+       Route::post('/update/{user}', [UserController::class, 'update']);
    });
 
    Route::prefix('/category')->group(function (){

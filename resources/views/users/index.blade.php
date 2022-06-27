@@ -45,7 +45,7 @@
                                     <td class="align-middle">{{$user->phone}}</td>
                                     <td class="align-middle">
                                         @foreach($user->roles as $role)
-                                            {{\App\Models\Role::ROLES[$role->role]}},
+                                            <span class="tag tag-{{\App\Models\Role::TAGS[$role->role]}}">{{\App\Models\Role::ROLES[$role->role]}}</span>
 
                                         @endforeach
 
