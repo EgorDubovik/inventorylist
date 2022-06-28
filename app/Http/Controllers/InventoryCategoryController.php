@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\InventoryCategory;
+use App\Models\InventoryList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -110,6 +111,7 @@ class InventoryCategoryController extends Controller
      */
     public function destroy(InventoryCategory $category)
     {
+        InventoryList::where('category_id',$category->id)->delete();
         $category->delete();
         return redirect('/category')->with('successful', 'Category has been removed successful');
     }
