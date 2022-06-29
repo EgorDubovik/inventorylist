@@ -90,13 +90,18 @@
                                                 </a>
                                                 <input class="input100 border-start-0 form-control ms-0" type="password" name="password" placeholder="Password">
                                             </div>
-                                            <div class="text-end pt-4">
+                                            <div class="row mt-3" style="margin-left: 2px;">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" name="remember" value="1" checked="">
+                                                    <span class="custom-control-label">Remember me</span>
+                                                </label>
+                                            </div>
+
+                                            <div class="text-end">
                                                 <p class="mb-0"><a href="forgot-password.html" class="text-primary ms-1">Forgot Password?</a></p>
                                             </div>
                                             <div class="container-login100-form-btn">
-                                                <button type="submit" class="login100-form-btn btn-primary btn">
-                                                    Login
-                                                </button>
+                                                <button type="submit" class="login100-form-btn btn-primary btn">Login</button>
                                             </div>
                                             <div class="text-center pt-3">
                                                 <p class="text-dark mb-0">Not a member?<a href="/auth/register" class="text-primary ms-1">Sign UP</a></p>
