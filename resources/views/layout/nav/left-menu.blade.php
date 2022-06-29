@@ -27,7 +27,7 @@
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="/users"><i
                             class="side-menu__icon fe fe-user"></i><span
-                            class="side-menu__label">Users</span></a>
+                            class="side-menu__label">Employees</span></a>
                 </li>
                 @endcan
                 <li class="slide">
