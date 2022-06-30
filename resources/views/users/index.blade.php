@@ -55,8 +55,8 @@
                                             <form method="post" action="/users/deactivate/{{$user->id}}" onsubmit="deactivate(this);return false;">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> remove</button>
-                                                <a href="/users/update/{{$user->id}}" class="btn btn-warning"><i class="fe fe-edit"></i> update</a>
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">remove</span></button>
+                                                <a href="/users/update/{{$user->id}}" class="btn btn-warning"><i class="fe fe-edit"></i> <span class="d-none d-lg-inline">update</span></a>
                                             </form>
                                         @endcan
                                     </td>

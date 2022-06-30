@@ -51,13 +51,13 @@
                                         <form action="/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
                                             @csrf
                                             @method('delete')
-                                            <a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> view</a>
+                                            <a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
 
                                             @can('update', $c)
-                                            <a href="/category/edit/{{$c->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> edit</a>
+                                                <a href="/category/edit/{{$c->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
                                             @endcan
                                             @can('delete', $c)
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> remove</button>
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">remove</span></button>
                                             @endcan
                                         </form>
 
