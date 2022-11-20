@@ -27,6 +27,7 @@
     <link href="{{ URL::asset('assets/css/transparent-style.css')}}" rel="stylesheet">
     <link href="{{ URL::asset('assets/css/skin-modes.css')}}" rel="stylesheet" />
     <link href="{{ URL::asset('assets/css/mystyle.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <!--- FONT-ICONS CSS -->
     <link href="{{ URL::asset('assets/css/icons.css')}}" rel="stylesheet" />
@@ -80,7 +81,7 @@
 <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
 <!-- JQUERY JS -->
-<script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <!-- BOOTSTRAP JS -->
 <script src="{{ URL::asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
@@ -102,10 +103,10 @@
 <!-- SIDEBAR JS -->
 <script src="{{ URL::asset('assets/plugins/sidebar/sidebar.js')}}"></script>
 
-<!-- Perfect SCROLLBAR JS-->
-<script src="{{ URL::asset('assets/plugins/p-scroll/perfect-scrollbar.js')}}"></script>
-<script src="{{ URL::asset('assets/plugins/p-scroll/pscroll.js')}}"></script>
-<script src="{{ URL::asset('assets/plugins/p-scroll/pscroll-1.js')}}"></script>
+{{--<!-- Perfect SCROLLBAR JS-->--}}
+{{--<script src="{{ URL::asset('assets/plugins/p-scroll/perfect-scrollbar.js')}}"></script>--}}
+{{--<script src="{{ URL::asset('assets/plugins/p-scroll/pscroll.js')}}"></script>--}}
+{{--<script src="{{ URL::asset('assets/plugins/p-scroll/pscroll-1.js')}}"></script>--}}
 
 <!-- INTERNAL CHARTJS CHART JS-->
 <script src="{{ URL::asset('assets/plugins/chart/Chart.bundle.js')}}"></script>
@@ -134,8 +135,8 @@
 <script src="{{ URL::asset('assets/plugins/sidemenu/sidemenu.js')}}"></script>
 
 <!-- TypeHead js -->
-<script src="{{ URL::asset('assets/plugins/bootstrap5-typehead/autocomplete.js')}}"></script>
-<script src="{{ URL::asset('assets/js/typehead.js')}}"></script>
+{{--<script src="{{ URL::asset('assets/plugins/bootstrap5-typehead/autocomplete.js')}}"></script>--}}
+{{--<script src="{{ URL::asset('assets/js/typehead.js')}}"></script>--}}
 
 <!-- INTERNAL INDEX JS -->
 <script src="{{ URL::asset('assets/js/index1.js')}}"></script>

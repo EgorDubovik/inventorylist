@@ -73,30 +73,28 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                        @csrf
-                        <input type="hidden" name="cid" value="{{$category->id}}">
-                        <input type="hidden" name="lastnumber" value="0">
-                        <div class="mb-3">
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="lale-number-f" class="col-form-label">Label number:</label>
-                                    <input type="text" class="form-control" id="label-number-f" name="label_number" value="{{($category->inventories->last()) ? ($category->inventories->last()->number+1) : 1}}">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="lale-count" class="col-form-label">Count:</label>
-                                    <input type="text" class="form-control" id="label-number-f" name="count" value="1">
-                                </div>
-                            </div>
-
-
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Furniture:</label>
-                            <input type="text" class="form-control" id="furniture" name="furniture">
-                        </div>
+                <div class="modal-body ui-front">
+                    @csrf
+                    <input type="hidden" name="cid" value="{{$category->id}}">
+                    <input type="hidden" name="lastnumber" value="0">
                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Furniture:</label>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="lale-number-f" class="col-form-label">Label number:</label>
+                                <input type="text" class="form-control" id="label-number-f" name="label_number" value="{{($category->inventories->last()) ? ($category->inventories->last()->number+1) : 1}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lale-count" class="col-form-label">Count:</label>
+                                <input type="text" class="form-control" id="label-number-f" name="count" value="1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 ui-widget">
+                        <label for="furniture" class="col-form-label">Furniture:</label>
+                        <input type="text" class="form-control" id="furniture" name="furniture">
+                    </div>
+                    <div class="mb-3">
+                        <label for="condition" class="col-form-label">Condition:</label>
                         <input type="text" class="form-control" id="condition" name="condition" value="good">
                     </div>
 
@@ -109,11 +107,47 @@
             </div>
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         function remove_item(f){
             if(confirm('Are you sure?')){
                 f.submit()
             }
         }
+
+
+        var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+
+        $( "#furniture" ).autocomplete({
+            source: availableTags,
+
+        });
     </script>
 @stop
+
