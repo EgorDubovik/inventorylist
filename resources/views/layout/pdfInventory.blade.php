@@ -1,10 +1,9 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Microsoft Word - INVENTORY LIST.docx</title><style type="text/css"> * {margin:0; padding:0; text-indent:0; }
- .s1 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 7.5pt; }
+ .s1 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 7.5pt; padding: 5px; }
  .s2 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
  .s3 { color: black; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 6.5pt; }
  .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
- .s5 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 6.5pt; }
  .s6 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 8pt;  text-align: center;}
  .s7 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 5.5pt; padding-left: 10px; }
  .s8 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 5pt; }
@@ -38,7 +37,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 	<table style="border-collapse:collapse;" cellspacing="0">
 		<tr style="height:21pt">
 			<td>
-				<p class="s1" style="padding-top: 5pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">US DOT #: <span class="s2">3005919</span></p>
+				<p class="s1">US DOT #: <span class="s2">3005919</span></p>
 			</td>
 			<td colspan="6" rowspan="4">
 			<p>
@@ -48,17 +47,17 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 		<p><br/></p>
 		<p class="s4" style="text-align: center;">HOUSEHOLD GOODS DESCRIPTIVE INVENTORY</p>
 	</td>
-	<td ><p><br/></p><p class="s5" >PAGE NO.    NO. OF PAGES</p>
+	<td ><p><br/></p><p class="s1" >PAGE NO.    <span style="margin-left: 20px"> NO. OF PAGES</span></p>
 	</td>
 	</tr><tr style="height:17pt">
 		<td ><p class="s1" >ICC/MC #: <span class="s2">026561</span></p></td>
-		<td ><p class="s5" >TAPE LOT NO.</p></td>
+		<td ><p class="s1" >TAPE LOT NO.</p></td>
 	</tr><tr style="height:18pt">
 		<td ><p class="s1" >VAN #:</p></td>
-		<td ><p class="s5" >TAPE COLOR</p></td>
+		<td ><p class="s1" >TAPE COLOR</p></td>
 	</tr><tr style="height:19pt">
 		<td ><p class="s1" >ORDER #:</p></td>
-		<td ><p class="s5" >Pick Up Date:</p></td>
+		<td ><p class="s1" >Pick Up Date:</p></td>
 	</tr>
 </table>
 
