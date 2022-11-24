@@ -62,5 +62,6 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::delete('/destroy/{inventoryList}', [InventoryController::class, 'destroy']);
        Route::get('/edit/{inventory}' ,[InventoryController::class, 'edit']);
        Route::post('/edit/{inventory}' ,[InventoryController::class, 'update']);
+       Route::get('/view/pdf/{category}', [InventoryController::class, 'viewPDF']);
    });
 });

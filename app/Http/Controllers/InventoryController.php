@@ -76,4 +76,9 @@ class InventoryController extends Controller
         return redirect()->route('inventory.list',['category' => $inventory->category->id]);
 
     }
+
+    public function viewPDF(InventoryCategory $category){
+
+        return view('inventory.viewPDF',['category'=>$category]);
+    }
 }

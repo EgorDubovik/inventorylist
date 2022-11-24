@@ -115,4 +115,5 @@ class InventoryCategoryController extends Controller
         $category->delete();
         return redirect('/category')->with('successful', 'Category has been removed successful');
     }
+
 }
