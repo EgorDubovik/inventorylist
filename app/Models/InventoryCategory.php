@@ -31,4 +31,12 @@ class InventoryCategory extends Model
     public function inventories(){
         return $this->hasMany(InventoryList::class,'category_id');
     }
+
+    public function addressM(){
+        return $this->hasOne(Addresses::class,'id','address');
+    }
+
+    public function dest_addressM(){
+        return $this->hasOne(Addresses::class,'id','dest_address');
+    }
 }

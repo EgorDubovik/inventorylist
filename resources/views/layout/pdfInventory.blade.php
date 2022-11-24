@@ -78,29 +78,47 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
         </td>
 		<td>
             <p class="s7" >CUSTOMER NAME</p>
-            <p class="cn">{{$category->customer_name}}</p>
+            <p class="cn">{{$category->dest_customer_name}}</p>
         </td>
 	</tr>
 	<tr>
 		<td>
             <p class="s7" >STREET ADDRESS</p>
-            <p class="cn">{{$category->customer_address}}</p>
+            <p class="cn">{{$category->addressM->street}}</p>
         </td>
 		<td>
             <p class="s7" >STREET ADDRESS</p>
-            <p class="cn">{{$category->customer_address}}</p>
+            <p class="cn">{{$category->dest_addressM->street}}</p>
         </td>
 	</tr>
 </table>
 
 <table class="nf ad">
 	<tr class="s7">
-		<td width="26%"><p>CITY</p></td>
-		<td width="12%"><p>STATE</p></td>
-		<td width="12%"><p>ZIP</p></td>
-		<td width="26%"><p>CITY</p></td>
-		<td width="12%"><p>STATE</p></td>
-		<td width="12%"><p>ZIP</p></td>
+		<td width="26%">
+            <p>CITY</p>
+            <p class="cn">{{$category->addressM->city}}</p>
+        </td>
+		<td width="12%">
+            <p>STATE</p>
+            <p class="cn">{{$category->addressM->state}}</p>
+        </td>
+		<td width="12%">
+            <p>ZIP</p>
+            <p class="cn">{{$category->addressM->zip}}</p>
+        </td>
+        <td width="26%">
+            <p>CITY</p>
+            <p class="cn">{{$category->dest_addressM->city}}</p>
+        </td>
+        <td width="12%">
+            <p>STATE</p>
+            <p class="cn">{{$category->dest_addressM->state}}</p>
+        </td>
+        <td width="12%">
+            <p>ZIP</p>
+            <p class="cn">{{$category->dest_addressM->zip}}</p>
+        </td>
 	</tr>
 </table>
 
