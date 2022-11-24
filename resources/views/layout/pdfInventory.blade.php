@@ -1,22 +1,22 @@
 <!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Microsoft Word - INVENTORY LIST.docx</title><style type="text/css"> * {margin:0; padding:0; text-indent:0; }
- .s1 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 7.5pt; padding: 5px; }
- .s2 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 9pt; }
- .s3 { color: black; font-family:Calibri, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 6.5pt; }
- .s4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 12pt; }
- .s6 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 8pt;  text-align: center;}
- .s7 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 5.5pt; padding-left: 10px; }
- .s8 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 5pt; }
- h2 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt;text-align: center; }
- .s9 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 5.5pt; }
- .s10 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 4pt; }
- .s11 { color: black; font-family:Calibri, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 10pt; }
- h3 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7.5pt; }
- p { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: normal; text-decoration: none; font-size: 5.5pt; margin:0pt; }
- .h1 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 14pt; }
- .h4 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 6.5pt; }
- .s12 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7.5pt; }
- .s13 { color: black; font-family:Arial, sans-serif; font-style: normal; font-weight: bold; text-decoration: none; font-size: 7pt; }
+ .s1, .s1 td p {font-weight: normal; text-decoration: none; font-size: 7.5pt; padding: 5px; }
+ .s2 {font-weight: normal; text-decoration: none; font-size: 9pt; }
+ .s3 {; font-weight: normal; text-decoration: none; font-size: 6.5pt; }
+ .s4 {font-weight: bold; text-decoration: none; font-size: 12pt; }
+ .s6 {font-weight: bold; text-decoration: none; font-size: 8pt;  text-align: center;}
+ .s7 {font-weight: normal; text-decoration: none; font-size: 5.5pt; padding-left: 10px; }
+ .s8 {font-weight: normal; text-decoration: none; font-size: 5pt; }
+ h2 {font-weight: bold; text-decoration: none; font-size: 10pt;text-align: center; }
+ .s9 {font-weight: bold; text-decoration: none; font-size: 5.5pt; }
+ .s10 {font-weight: bold; text-decoration: none; font-size: 4pt; }
+ .s11 {font-weight: bold; text-decoration: none; font-size: 10pt; }
+ h3 {font-weight: bold; text-decoration: none; font-size: 7.5pt; }
+ p {font-weight: normal; text-decoration: none; font-size: 5.5pt; margin:0pt; }
+ .h1 {font-weight: bold; text-decoration: none; font-size: 14pt; }
+ .h4 {font-weight: bold; text-decoration: none; font-size: 6.5pt; }
+ .s12 {font-weight: bold; text-decoration: none; font-size: 7.5pt; }
+ .s13 {font-weight: bold; text-decoration: none; font-size: 7pt; }
  .e1{ padding-top: 2pt;padding-left: 5pt;text-indent: 0pt;line-height: 5pt;text-align: left; }
 .nf tr:first-child td{ border-top: hidden !important;}
 .ad tr td{ padding: 1px 0px 18px 4px; }
@@ -25,7 +25,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
  table, tbody {vertical-align: top; overflow: visible; margin-left:5.2557pt;width: 100%; border-collapse: collapse;}
  table, th, td {
   border: 1px solid black;
-  
+
 }
 .nb {margin:10px 5px;}
 .nb tr td {
@@ -33,7 +33,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 }
 .nb tr:first-child td { padding: 0px }
 </style></head><body>
-<div style="width: 782px;">
+<div style="width: 782px; padding: 20px; background: #fff; border-radius: 5px;">
 	<table style="border-collapse:collapse;" cellspacing="0">
 		<tr style="height:21pt">
 			<td>
@@ -49,15 +49,15 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 	</td>
 	<td ><p><br/></p><p class="s1" >PAGE NO.    <span style="margin-left: 20px"> NO. OF PAGES</span></p>
 	</td>
-	</tr><tr style="height:17pt">
-		<td ><p class="s1" >ICC/MC #: <span class="s2">026561</span></p></td>
-		<td ><p class="s1" >TAPE LOT NO.</p></td>
+	</tr><tr style="height:17pt" class="s1">
+		<td ><p>ICC/MC #: <span class="s2">026561</span></p></td>
+		<td ><p>TAPE LOT NO.</p></td>
 	</tr><tr style="height:18pt">
-		<td ><p class="s1" >VAN #:</p></td>
-		<td ><p class="s1" >TAPE COLOR</p></td>
+		<td ><p>VAN #:</p></td>
+		<td ><p>TAPE COLOR</p></td>
 	</tr><tr style="height:19pt">
-		<td ><p class="s1" >ORDER #:</p></td>
-		<td ><p class="s1" >Pick Up Date:</p></td>
+		<td ><p>ORDER #:</p></td>
+		<td ><p>Pick Up Date:</p></td>
 	</tr>
 </table>
 
@@ -77,13 +77,13 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 </table>
 
 <table class="nf ad">
-	<tr>
-		<td width="26%"><p class="s7">CITY</p></td>
-		<td width="12%"><p class="s7">STATE</p></td>
-		<td width="12%"><p class="s7">ZIP</p></td>
-		<td width="26%"><p class="s7">CITY</p></td>
-		<td width="12%"><p class="s7">STATE</p></td>
-		<td width="12%"><p class="s7">ZIP</p></td>
+	<tr class="s7">
+		<td width="26%"><p>CITY</p></td>
+		<td width="12%"><p>STATE</p></td>
+		<td width="12%"><p>ZIP</p></td>
+		<td width="26%"><p>CITY</p></td>
+		<td width="12%"><p>STATE</p></td>
+		<td width="12%"><p>ZIP</p></td>
 	</tr>
 </table>
 
@@ -95,113 +95,113 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 	</tr>
 	<tr>
 		<td>
-			<table class="nb">
+			<table class="nb s8" >
 				<tr>
-					<td><p class="s8" >B/W – BLACK OR WHITE TV</p></td>
-					<td><p class="s8" >DBO – DISASSEMBLED BY</p></td>
+					<td><p>B/W – BLACK OR WHITE TV</p></td>
+					<td><p>DBO – DISASSEMBLED BY</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8" >C – COLOR TV</p></td>
-					<td><p class="s8" >OWNER</p></td>
+					<td><p>C – COLOR TV</p></td>
+					<td><p>OWNER</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8" >CP – CARRIER PACKED</p></td>
-					<td><p class="s8" >PB – PROFESSIONAL BOOKS</p></td>
+					<td><p>CP – CARRIER PACKED</p></td>
+					<td><p>PB – PROFESSIONAL BOOKS</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8" >PBO – PACKED BY OWNER</p></td>
-					<td><p class="s8" >PE – PROFESSIONAL</p></td>
+					<td><p>PBO – PACKED BY OWNER</p></td>
+					<td><p>PE – PROFESSIONAL</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8" >CD – CARRIER</p></td>
-					<td><p class="s8" >EQUIPMENT</p></td>
+					<td><p>CD – CARRIER</p></td>
+					<td><p>EQUIPMENT</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8" >DISASSEMBLED</p></td>
-					<td><p class="s8" >PP – PROFESSIONAL PAPERS</p></td>
+					<td><p>DISASSEMBLED</p></td>
+					<td><p>PP – PROFESSIONAL PAPERS</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8" >SW – STRETCH WRAPPED</p></td>
-					<td><p class="s8" >MCU – MECHANICAL CONDITION</p></td>
+					<td><p>SW – STRETCH WRAPPED</p></td>
+					<td><p>MCU – MECHANICAL CONDITION</p></td>
 				</tr>
-				
+
 			</table>
 		</td>
 		<td>
 			<table class="nb">
 				<tr>
-					<td ><p class="s8" >BE – BENT</p></td>
-					<td ><p class="s8" >D – DENTED</p></td>
-					<td ><p class="s8" >MO – MOTHEATEN</p></td>
-					<td ><p class="s8" >SO – SOILED</p></td>
+					<td ><p>BE – BENT</p></td>
+					<td ><p>D – DENTED</p></td>
+					<td ><p>MO – MOTHEATEN</p></td>
+					<td ><p>SO – SOILED</p></td>
 				</tr>
 				<tr>
-					<td ><p class="s8" >BR – BROKEN</p></td>
-					<td ><p class="s8" >F – FADED</p></td>
-					<td ><p class="s8" >P – PEELING</p></td>
-					<td ><p class="s8" >ST – STAINED</p></td>
+					<td ><p>BR – BROKEN</p></td>
+					<td ><p>F – FADED</p></td>
+					<td ><p>P – PEELING</p></td>
+					<td ><p>ST – STAINED</p></td>
 				</tr>
 				<tr>
-					<td ><p class="s8" >BU – BURNED</p></td>
-					<td ><p class="s8" >G – GOUGED</p></td>
-					<td ><p class="s8" >R – RUBBED</p></td>
-					<td ><p class="s8" >S – STRETCHED</p></td>
+					<td ><p>BU – BURNED</p></td>
+					<td ><p>G – GOUGED</p></td>
+					<td ><p>R – RUBBED</p></td>
+					<td ><p>S – STRETCHED</p></td>
 				</tr>
 				<tr>
-					<td ><p class="s8" >CH – CHIPPED</p></td>
-					<td ><p class="s8" >L – LOOSE</p></td>
-					<td ><p class="s8" >RU – RUSTED</p></td>
-					<td ><p class="s8" >T – TORN</p></td>
+					<td ><p>CH – CHIPPED</p></td>
+					<td ><p>L – LOOSE</p></td>
+					<td ><p>RU – RUSTED</p></td>
+					<td ><p>T – TORN</p></td>
 				</tr>
 				<tr>
-					<td ><p class="s8" >CU – CONTENTS </p></td>
-					<td ><p class="s8" >M – MARRED</p></td>
-					<td ><p class="s8" >SC – SCRATCHED</p></td>
-					<td ><p class="s8" >W – BADLY WORN</p></td>
+					<td ><p>CU – CONTENTS </p></td>
+					<td ><p>M – MARRED</p></td>
+					<td ><p>SC – SCRATCHED</p></td>
+					<td ><p>W – BADLY WORN</p></td>
 				</tr>
 				<tr>
-					<td ><p class="s8" >CONDITION UNKNOWN</p></td>
-					<td ><p class="s8" >MI – MILDEW</p></td>
-					<td ><p class="s8" >SH – SHORT</p></td>
-					<td ><p class="s8" >Z – CRACKED</p></td>
-				</tr>	
+					<td ><p>CONDITION UNKNOWN</p></td>
+					<td ><p>MI – MILDEW</p></td>
+					<td ><p>SH – SHORT</p></td>
+					<td ><p>Z – CRACKED</p></td>
+				</tr>
 			</table>
 		</td>
 		<td>
-			<table class="nb">
+			<table class="nb s8">
 				<tr>
-					<td><p class="s8">1. ARM</p></td>
-					<td><p class="s8">8. RIGHT</p></td>
-					<td><p class="s8">15. SEAT</p></td>
+					<td><p>1. ARM</p></td>
+					<td><p>8. RIGHT</p></td>
+					<td><p>15. SEAT</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8"> 2. BOTTOM    </p></td>
-					<td><p class="s8"> 9. SIDE     </p></td>
-					<td><p class="s8"> 16. DRAWER</p></td>
+					<td><p> 2. BOTTOM    </p></td>
+					<td><p> 9. SIDE     </p></td>
+					<td><p> 16. DRAWER</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8"> 3. CORNER    </p></td>
-					<td><p class="s8"> 10. TOP     </p></td>
-					<td><p class="s8"> 17. DOOR</p></td>
+					<td><p> 3. CORNER    </p></td>
+					<td><p> 10. TOP     </p></td>
+					<td><p> 17. DOOR</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8"> 4. FRONT    </p></td>
-					<td><p class="s8"> 11. VENEER   </p></td>
-					<td><p class="s8"> 18. SHELF</p></td>
+					<td><p> 4. FRONT    </p></td>
+					<td><p> 11. VENEER   </p></td>
+					<td><p> 18. SHELF</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8"> 5. LEFT     </p></td>
-					<td><p class="s8"> 12. EDGE    </p></td>
-					<td><p class="s8"> 19. HARDWARE</p></td>
+					<td><p> 5. LEFT     </p></td>
+					<td><p> 12. EDGE    </p></td>
+					<td><p> 19. HARDWARE</p></td>
 				</tr>
 				<tr>
-					<td><p class="s8"> 6. LEGS     </p></td>
-					<td><p class="s8"> 13. CENTER</p></td>
+					<td><p> 6. LEGS     </p></td>
+					<td><p> 13. CENTER</p></td>
 					<td></td>
 				</tr>
 				<tr>
-					<td><p class="s8"> 7. REAR     </p></td>
-					<td><p class="s8"> 14. INSIDE</p></td>
+					<td><p> 7. REAR     </p></td>
+					<td><p> 14. INSIDE</p></td>
 					<td></td>
 				</tr>
 			</table>
@@ -222,7 +222,9 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 		<td style="width:148pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s9" style="padding-top: 4pt;padding-left: 59pt;padding-right: 59pt;text-indent: 0pt;text-align: center;">ARTICLES</p></td>
 		<td style="width:45pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s10" style="padding-top: 1pt;padding-left: 20pt;padding-right: 7pt;text-indent: -8pt;text-align: left;">CONDITION AT</p><p class="s10" style="padding-left: 15pt;text-indent: 0pt;line-height: 5pt;text-align: left;">ORIGIN</p></td>
 		<td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s10" style="padding-top: 1pt;padding-left: 13pt;padding-right: 12pt;text-indent: 0pt;text-align: center;">EXEPTIONS (IF ANY)</p><p class="s10" style="padding-left: 7pt;padding-right: 6pt;text-indent: 0pt;line-height: 5pt;text-align: center;">AT DESTINATION</p></td>
-	</tr><tr style="height:16pt"><td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s11" style="padding-right: 4pt;text-indent: 0pt;text-align: right;">1</p></td>
+	</tr>
+    <tr style="height:16pt">
+        <td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s11" style="padding-right: 4pt;text-indent: 0pt;text-align: right;">1</p></td>
 		<td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
 		<td style="width:148pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
 		<td style="width:46pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
@@ -237,7 +239,26 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 <h3 style="padding-top: 4pt;padding-bottom: 3pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">REMARKS:</h3>
 <div class="hr"></div>
 <div class="hr" style="margin-top: 27px"></div>
-<p style="padding-left: 5pt;text-indent: 0pt;line-height: 1pt;text-align: left;"/><p style="padding-top: 2pt;padding-bottom: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">THIS IS THE INVENTORY AND DESCRIPTION OF THIS SHIPMENT AT ORIGIN AND DESTINATION. ALL CLAIMS FOR LOSS OR EXTERIOR DAMAGE ARE TO BE SUPPORTED BY EXEPTIONS NOTED ABOVE. “WE HAVE CHECKED ALL THE ITEMS LISTED AND ACKNOWLEDGE THAT THIS IS TRUE AND COMPLETE LIST OF THE GOODS TENDERED AND OF THE STATE OF THE GOODS RECEIVED” 
-	<br><span class="h1">WARNING  </span><span class="h4">BEFORE SIGNING CHECK SHIPMENT, COUNT ITEMS AND DESCRIBE LOSS OR DAMAGE IN SPACE ON THE RIGHT ABOVE.</span></p><table style="border-collapse:collapse;margin-left:5.2557pt" cellspacing="0"><tr style="height:26pt"><td style="width:45pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" rowspan="2"><p style="text-indent: 0pt;text-align: left;"><br/></p><p class="s12" style="padding-top: 7pt;padding-left: 9pt;padding-right: 8pt;text-indent: 8pt;text-align: left;">AT ORIGIN</p></td><td style="width:171pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CARRIER SIGNATURE</p></td><td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td><td style="width:45pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" rowspan="2"><p style="text-indent: 0pt;text-align: left;"><br/></p><p class="s13" style="padding-left: 5pt;padding-right: 5pt;text-indent: 0pt;text-align: center;">AT DESTINATION</p></td><td style="width:171pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CARRIER SIGNATURE</p></td><td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td></tr><tr style="height:24pt"><td style="width:171pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CUSTOMER’S SIGNATURE</p></td><td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td><td style="width:171pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CUSTOMER’S SIGNATURE</p></td><td style="width:72pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td></tr></table>
+<p style="padding-left: 5pt;text-indent: 0pt;line-height: 1pt;text-align: left;"/>
+    <p style="padding-top: 2pt;padding-bottom: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">THIS IS THE INVENTORY AND DESCRIPTION OF THIS SHIPMENT AT ORIGIN AND DESTINATION. ALL CLAIMS FOR LOSS OR EXTERIOR DAMAGE ARE TO BE SUPPORTED BY EXEPTIONS NOTED ABOVE. “WE HAVE CHECKED ALL THE ITEMS LISTED AND ACKNOWLEDGE THAT THIS IS TRUE AND COMPLETE LIST OF THE GOODS TENDERED AND OF THE STATE OF THE GOODS RECEIVED”
+        <span class="h1"><br>WARNING  </span>
+        <span class="h4">BEFORE SIGNING CHECK SHIPMENT, COUNT ITEMS AND DESCRIBE LOSS OR DAMAGE IN SPACE ON THE RIGHT ABOVE.</span>
+    </p>
+    <table style="border-collapse:collapse;margin-left:5.2557pt" cellspacing="0">
+        <tr style="height:26pt">
+            <td style="width:45pt;" rowspan="2"><p class="s12" style="padding-top: 7pt;text-indent: 8pt;text-align: center;">AT ORIGIN</p></td>
+            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CARRIER SIGNATURE</p></td>
+            <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+            <td style="width:45pt;" rowspan="2"><p class="s13" style="padding-top: 7pt;text-indent: 0pt;text-align: center;">AT DESTINATION</p></td>
+            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CARRIER SIGNATURE</p></td>
+            <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+        </tr>
+        <tr style="height:24pt">
+            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CUSTOMER’S SIGNATURE</p></td>
+            <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CUSTOMER’S SIGNATURE</p></td>
+            <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+        </tr>
+    </table>
 </div>
 </body></html>
