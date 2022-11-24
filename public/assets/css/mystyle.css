@@ -10,3 +10,14 @@
 .category-navigation{
     margin-bottom: 20px;
 }
+.subtitle-creat-category{
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+.category-create .control-label{
+    font-size: 13px;
+}
+.category-create-address{
+    border-top: 1px solid #e7e7e7;margin-bottom: 10px;font-weight: bold
+}

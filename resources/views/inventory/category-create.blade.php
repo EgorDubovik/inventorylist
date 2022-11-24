@@ -17,7 +17,7 @@
         <!-- CONTENT -->
         <div class="row">
             <div class="col-12">
-                <div class="col-xl-6 m-auto">
+                <div class="col-lg-8 m-auto">
                     <div class="card">
                         <div class="card-header">
                             <h4>Create new inventory category</h4>
@@ -26,20 +26,114 @@
                             @if($errors->any())
                                 @include("layout/error-message")
                             @endif
-                            <form method="post">
+                            <form method="post" class="form-horizontal category-create">
                                 @csrf
-                                <div class="row mb-4">
-                                    <label for="inputName" class="col-md-3 form-label">Customer Name</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" id="inputName" placeholder="Customer Name" name="customer_name" value="{{old('customer_name')}}">
+                                <div class="row" style="padding-bottom: 20px;">
+                                    <div class="col-md-6">
+                                        <div class="subtitle-creat-category"> ORIGIN INFORMATION</div>
+                                        <div class="row mb-4">
+                                            <label for="inputName" class="col-md-3 form-label" style="font-size: 13px;">Customer Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="inputName" placeholder="Customer Name" name="customer_name" value="{{old('customer_name')}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="category-create-address">Address</div>
+                                        <div style="margin-left: 20px;">
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="Address Line 1" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="Address Line 2" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">City</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="City" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">State</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" placeholder="State" class="form-control">
+                                                </div>
+
+                                                <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" placeholder="Post Code" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6" style="border-left: 1px solid #ccc ">
+                                        <div class="subtitle-creat-category"> DESTINATION INFORMATION</div>
+                                        <div class="row mb-4">
+                                            <label for="inputName" class="col-md-3 form-label" style="font-size: 13px;">Customer Name</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" id="inputName" placeholder="Customer Name" name="customer_name" value="{{old('customer_name')}}">
+                                            </div>
+                                        </div>
+                                        <div class="category-create-address">Address</div>
+                                        <div style="margin-left: 20px;">
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">Line 1</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="Address Line 1" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">Line 2</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="Address Line 2" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">City</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" placeholder="City" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Text input-->
+                                            <div class="row mb-4">
+                                                <label class="col-sm-2 control-label" for="textinput">State</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" placeholder="State" class="form-control">
+                                                </div>
+
+                                                <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" placeholder="Post Code" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row mb-4">
-                                    <label for="inputEmail3" class="col-md-3 form-label">Email</label>
-                                    <div class="col-md-9">
-                                        <input type="address" class="form-control" id="inputEmail3" placeholder="Customer address" name="customer_address" value="{{old('customer_address')}}">
-                                    </div>
-                                </div>
+
+{{--                                <div class="row mb-4">--}}
+{{--                                    <label for="inputEmail3" class="col-md-3 form-label">Email</label>--}}
+{{--                                    <div class="col-md-9">--}}
+{{--                                        <input type="address" class="form-control" id="inputEmail3" placeholder="Customer address" name="customer_address" value="{{old('customer_address')}}">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <button type="submit" class="btn btn-success btn-block">Create</button>
                             </form>
                         </div>
