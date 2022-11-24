@@ -17,7 +17,10 @@
         <!-- CONTENT -->
         <div class="row">
             <div class="col-12">
-                @include('layout/pdfinventory')
+                <div class="category-navigation">
+                    <a href="/inventory/list/{{$category->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
+                </div>
+                @include('layout/pdfinventory',['category'=>$category])
             </div>
         </div>
     </div>

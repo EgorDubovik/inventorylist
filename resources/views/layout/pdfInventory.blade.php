@@ -32,6 +32,11 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 	border:hidden;
 }
 .nb tr:first-child td { padding: 0px }
+.cn{
+    font-size: 13px;
+    padding-left: 8px;
+    font-weight: bold;
+}
 </style></head><body>
 <div style="width: 782px; padding: 20px; background: #fff; border-radius: 5px;">
 	<table style="border-collapse:collapse;" cellspacing="0">
@@ -67,12 +72,24 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 		<td width="50%"><p class="s6">DESTINATION INFORMATION</p></td>
 	</tr>
 	<tr>
-		<td ><p class="s7" >CUSTOMER NAME</p></td>
-		<td ><p class="s7" >CUSTOMER NAME</p></td>
+		<td>
+            <p class="s7" >CUSTOMER NAME</p>
+            <p class="cn">{{$category->customer_name}}</p>
+        </td>
+		<td>
+            <p class="s7" >CUSTOMER NAME</p>
+            <p class="cn">{{$category->customer_name}}</p>
+        </td>
 	</tr>
 	<tr>
-		<td ><p class="s7" >STREET ADDRESS</p></td>
-		<td ><p class="s7" >STREET ADDRESS</p></td>
+		<td>
+            <p class="s7" >STREET ADDRESS</p>
+            <p class="cn">{{$category->customer_address}}</p>
+        </td>
+		<td>
+            <p class="s7" >STREET ADDRESS</p>
+            <p class="cn">{{$category->customer_address}}</p>
+        </td>
 	</tr>
 </table>
 
