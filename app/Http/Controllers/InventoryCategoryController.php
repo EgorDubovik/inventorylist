@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Addresses;
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
 use Illuminate\Http\Request;
@@ -46,17 +47,33 @@ class InventoryCategoryController extends Controller
     {
         $validated = $request->validate([
             'customer_name' => 'required',
-            'customer_address' => 'required',
+            'dest_customer_name' => 'required',
+        ]);
+
+        $address = Addresses::create([
+            'street' => $request->street,
+            'city' => $request->city,
+            'state' => $request->state,
+            'zip' => $request->zip
+        ]);
+
+        $dest_address = Addresses::create([
+            'street' => $request->dest_street,
+            'city' => $request->dest_city,
+            'state' => $request->dest_state,
+            'zip' => $request->dest_zip
         ]);
 
         $category = InventoryCategory::create([
             'user_id' => Auth::user()->id,
             'company_id' => Auth::user()->company_id,
             'customer_name' => $request->customer_name,
-            'customer_address' => $request->customer_address,
+            'dest_customer_name' => $request->dest_customer_name,
+            'address' => $address->id,
+            'dest_address' => $dest_address->id
         ]);
 
-        return redirect('/inventory/list/'.$category->id)->with('successful', 'Inventory category hass bed created successful');
+        return redirect('/inventory/view/pdf/'.$category->id)->with('successful', 'Inventory category hass bed created successful');
     }
 
     /**
