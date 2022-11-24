@@ -17,7 +17,11 @@ class InventoryCategory extends Model
         'user_id',
         'company_id',
         'customer_name',
-        'customer_address',
+        'dest_customer_name',
+        'customer_phone',
+        'dest_customer_phone',
+        'address',
+        'dest_address'
     ];
 
     public function creater(){
