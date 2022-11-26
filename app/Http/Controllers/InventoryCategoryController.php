@@ -48,6 +48,14 @@ class InventoryCategoryController extends Controller
         $validated = $request->validate([
             'customer_name' => 'required',
             'dest_customer_name' => 'required',
+            'street' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'dest_street' => 'required',
+            'dest_city' => 'required',
+            'dest_state' => 'required',
+            'dest_zip' => 'required',
         ]);
 
         $address = Addresses::create([
@@ -110,6 +118,14 @@ class InventoryCategoryController extends Controller
         $validated = $request->validate([
             'customer_name' => 'required',
             'dest_customer_name' => 'required',
+            'street' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'zip' => 'required',
+            'dest_street' => 'required',
+            'dest_city' => 'required',
+            'dest_state' => 'required',
+            'dest_zip' => 'required',
         ]);
 
         $category->update([
