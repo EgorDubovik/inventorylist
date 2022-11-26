@@ -17,6 +17,39 @@
         <!-- CONTENT -->
         <div class="row">
             <div class="col-12">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="subtitle-creat-category"> ORIGIN INFORMATION</div>
+                                        <div class="row">
+                                            <div class="col-md-3 text-muted">Customer name</div>
+                                            <div class="col-md-9">{{$category->customer_name}}</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-md-3 text-muted">Address</div>
+                                            <div class="col-md-9">{{$category->addressM->street}}, {{$category->addressM->city}}, {{$category->addressM->state}} {{$category->addressM->zip}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" style="border-left: 1px solid #ccc ">
+                                        <div class="subtitle-creat-category"> DESTINATION INFORMATION</div>
+                                        <div class="row">
+                                            <div class="col-md-3 text-muted">Customer name</div>
+                                            <div class="col-md-9">{{$category->dest_customer_name}}</div>
+                                        </div>
+                                        <div class="row mt-2">
+                                            <div class="col-md-3 text-muted">Address</div>
+                                            <div class="col-md-9">{{$category->dest_addressM->street}}, {{$category->dest_addressM->city}}, {{$category->dest_addressM->state}} {{$category->dest_addressM->zip}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 @include('layout/success-message',['status' => 'successful'])
                 @if($errors->any())
                     @include("layout/error-message")
