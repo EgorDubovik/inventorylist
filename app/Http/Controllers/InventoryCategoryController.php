@@ -109,13 +109,28 @@ class InventoryCategoryController extends Controller
     {
         $validated = $request->validate([
             'customer_name' => 'required',
-            'customer_address' => 'required',
+            'dest_customer_name' => 'required',
         ]);
 
         $category->update([
             'customer_name' => $request->customer_name,
-            'customer_address' => $request->customer_address,
+            'dest_customer_name' => $request->dest_customer_name,
         ]);
+
+        $category->addressM()->update([
+            'street'=> $request->street,
+            'city' => $request->city,
+            'state' => $request->state,
+            'zip' => $request->zip
+        ]);
+
+        $category->dest_addressM()->update([
+            'street'=> $request->dest_street,
+            'city' => $request->dest_city,
+            'state' => $request->dest_state,
+            'zip' => $request->dest_zip
+        ]);
+
 
         return redirect()->route('categories')->with('successful','Category has been update successful');
     }

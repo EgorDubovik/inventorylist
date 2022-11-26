@@ -46,6 +46,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-footer">
+                                <a href="/category/edit/{{$category->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
