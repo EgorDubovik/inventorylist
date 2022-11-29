@@ -21,3 +21,13 @@
 .category-create-address{
     border-top: 1px solid #e7e7e7;margin-bottom: 10px;font-weight: bold
 }
+.sign-btn{
+    margin-right: 10px;
+    border: 1px solid #7c7c7c;
+    background: #ccc;
+    padding: 7px 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px #ccc;
+}

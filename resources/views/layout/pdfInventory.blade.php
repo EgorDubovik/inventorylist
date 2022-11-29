@@ -1,5 +1,4 @@
-<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Microsoft Word - INVENTORY LIST.docx</title><style type="text/css"> * {margin:0; padding:0; text-indent:0; }
+<style type="text/css"> * {margin:0; padding:0; text-indent:0; }
  .s1, .s1 td p {font-weight: normal; text-decoration: none; font-size: 7.5pt; padding: 5px; }
  .s2 {font-weight: normal; text-decoration: none; font-size: 9pt; }
  .s3 {; font-weight: normal; text-decoration: none; font-size: 6.5pt; }
@@ -37,7 +36,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
     padding-left: 8px;
     font-weight: bold;
 }
-</style></head><body>
+</style>
 <div style="width: 782px; padding: 20px; background: #fff; border-radius: 5px;">
 	<table style="border-collapse:collapse;" cellspacing="0">
 		<tr style="height:21pt">
@@ -280,20 +279,40 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
         <span class="h4">BEFORE SIGNING CHECK SHIPMENT, COUNT ITEMS AND DESCRIBE LOSS OR DAMAGE IN SPACE ON THE RIGHT ABOVE.</span>
     </p>
     <table style="border-collapse:collapse;margin-left:5.2557pt" cellspacing="0">
-        <tr style="height:26pt">
+        <tr style="height:26pt" class="s7">
             <td style="width:45pt;" rowspan="2"><p class="s12" style="padding-top: 7pt;text-indent: 8pt;text-align: center;">AT ORIGIN</p></td>
-            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CARRIER SIGNATURE</p></td>
+            <td style="width:171pt;">
+                <p >CARRIER SIGNATURE</p>
+                <p style="text-align: right">
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="carorg">Sign</button>
+                </p>
+            </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
             <td style="width:45pt;" rowspan="2"><p class="s13" style="padding-top: 7pt;text-indent: 0pt;text-align: center;">AT DESTINATION</p></td>
-            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CARRIER SIGNATURE</p></td>
+            <td style="width:171pt;">
+                <p>CARRIER SIGNATURE</p>
+                <p style="text-align: right">
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="cardest">Sign</button>
+                </p>
+            </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
         </tr>
         <tr style="height:24pt">
-            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CUSTOMER’S SIGNATURE</p></td>
+            <td style="width:171pt;">
+                <p>CUSTOMER’S SIGNATURE</p>
+                <p style="text-align: right">
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="cusorg">Sign</button>
+                </p>
+            </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
-            <td style="width:171pt;"><p class="s7" style="padding-left: 5pt;text-indent: 0pt;line-height: 6pt;text-align: left;">CUSTOMER’S SIGNATURE</p></td>
+            <td style="width:171pt;">
+                <p>CUSTOMER’S SIGNATURE</p>
+                <p style="text-align: right">
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="cusdest">Sign</button>
+                </p>
+            </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
         </tr>
     </table>
 </div>
-</body></html>
+
