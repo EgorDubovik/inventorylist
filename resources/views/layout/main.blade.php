@@ -27,6 +27,7 @@
     <link href="{{ URL::asset('assets/css/transparent-style.css')}}" rel="stylesheet">
     <link href="{{ URL::asset('assets/css/skin-modes.css')}}" rel="stylesheet" />
     <link href="{{ URL::asset('assets/css/mystyle.css')}}" rel="stylesheet" />
+    <link href="{{ URL::asset('assets/css/jquery.signaturepad.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <!--- FONT-ICONS CSS -->
@@ -81,7 +82,8 @@
 <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
 <!-- JQUERY JS -->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
+{{--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>--}}
 
 <!-- BOOTSTRAP JS -->
 <script src="{{ URL::asset('assets/plugins/bootstrap/js/popper.min.js')}}"></script>
