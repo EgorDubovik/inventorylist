@@ -41,12 +41,14 @@
                     <form method="post" action="/category/signature/save" class="sigPad" style="width: 403px; height: 300px; margin: 0 auto;" >
                         @csrf
                         <input type="hidden" name="wh" id="wh" value="">
+                        <input type="hidden" name="category_id" value="{{$category->id}}">
                         <ul class="sigNav" style="display: block;">
                             <li class="clearButton" style="display: list-item;"><a href="#clear">Clear</a></li>
                         </ul>
                         <div class="sig sigWrapper current" style="height: 219px;">
                             <canvas class="pad" width="400" height="200"></canvas>
                             <input type="hidden" name="output" class="output" value="">
+                            <input type="hidden" name="base64" id="base64" value="">
                         </div>
                         <button type="submit" class="btn btn-primary">Accept</button>
                     </form>
@@ -68,11 +70,16 @@
         });
 
         $(document).ready(function() {
-            $('.sigPad').signaturePad({
+            var apis = $('.sigPad').signaturePad({
                 drawOnly:true,
                 drawBezierCurves:true,
                 lineTop:200,
+                onDrawEnd : function (){
+                    console.log('end');
+                    $('#base64').val(apis.getSignatureImage());
+                }
             });
+
         });
 
 
