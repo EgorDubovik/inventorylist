@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
+use App\Models\Signatures;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,9 @@ class InventoryController extends Controller
 
 
     public function index(Request $request, InventoryCategory $category){
+
+
+
         return view('inventory.list',['category' => $category]);
     }
 
@@ -78,7 +82,7 @@ class InventoryController extends Controller
     }
 
     public function viewPDF(InventoryCategory $category){
-
+//        dd($category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION));
         return view('inventory.viewPDF',['category'=>$category]);
     }
 }

@@ -39,4 +39,8 @@ class InventoryCategory extends Model
     public function dest_addressM(){
         return $this->hasOne(Addresses::class,'id','dest_address');
     }
+
+    public function signatures(){
+        return $this->hasMany(Signatures::class,'category_id');
+    }
 }

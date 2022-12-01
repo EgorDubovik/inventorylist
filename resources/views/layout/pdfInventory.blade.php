@@ -284,7 +284,11 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
             <td style="width:171pt;">
                 <p >CARRIER SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>
+                    @if($category->signatures->contains('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN))
+                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN)->first()->signature}}">
+                    @else
+                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>
+                    @endif
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -292,7 +296,11 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
             <td style="width:171pt;">
                 <p>CARRIER SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>
+                    @if($category->signatures->contains('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION))
+                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION)->first()->signature}}">
+                    @else
+                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>
+                    @endif
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -301,14 +309,22 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
             <td style="width:171pt;">
                 <p>CUSTOMER’S SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>
+                    @if($category->signatures->contains('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN))
+                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN)->first()->signature}}">
+                    @else
+                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>
+                    @endif
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
             <td style="width:171pt;">
                 <p>CUSTOMER’S SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>
+                    @if($category->signatures->contains('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION))
+                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION)->first()->signature}}">
+                    @else
+                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>
+                    @endif
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
