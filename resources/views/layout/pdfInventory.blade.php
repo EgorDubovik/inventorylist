@@ -36,6 +36,11 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
     padding-left: 8px;
     font-weight: bold;
 }
+.fn{
+    font-size: 10px;
+    padding-top: 1px;
+    padding-left: 5px;
+}
 </style>
 <div style="width: 782px; padding: 20px; background: #fff; border-radius: 5px;">
 	<table style="border-collapse:collapse;" cellspacing="0">
@@ -257,18 +262,23 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 		<td style="width:45pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s10" style="padding-top: 1pt;padding-left: 20pt;padding-right: 7pt;text-indent: -8pt;text-align: left;">CONDITION AT</p><p class="s10" style="padding-left: 15pt;text-indent: 0pt;line-height: 5pt;text-align: left;">ORIGIN</p></td>
 		<td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s10" style="padding-top: 1pt;padding-left: 13pt;padding-right: 12pt;text-indent: 0pt;text-align: center;">EXEPTIONS (IF ANY)</p><p class="s10" style="padding-left: 7pt;padding-right: 6pt;text-indent: 0pt;line-height: 5pt;text-align: center;">AT DESTINATION</p></td>
 	</tr>
+
+    @for($i = 0; $i < $category->inventories->count(); $i+=2)
     <tr style="height:16pt">
-        <td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s11" style="padding-right: 4pt;text-indent: 0pt;text-align: right;">1</p></td>
-		<td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-		<td style="width:148pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        <td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s11" style="padding-right: 4pt;text-indent: 0pt;text-align: right;">{{$category->inventories[$i]->number}}</p></td>
+		<td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"></p></td>
+		<td style="width:148pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="fn">{{$category->inventories[$i]->furniture_name}}</p></td>
 		<td style="width:46pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
 		<td style="width:49pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-		<td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s11" style="padding-right: 4pt;text-indent: 0pt;text-align: right;">1</p></td>
+        @if($category->inventories->count()>$i+1)
+		<td style="width:22pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="s11" style="padding-right: 4pt;text-indent: 0pt;text-align: right;">{{$category->inventories[$i+1]->number}}</p></td>
 		<td style="width:23pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
-		<td style="width:148pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+		<td style="width:148pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p class="fn">{{$category->inventories[$i+1]->furniture_name}}</p></td>
 		<td style="width:45pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
 		<td style="width:50pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;"><p style="text-indent: 0pt;text-align: left;"><br/></p></td>
+        @endif
 	</tr>
+    @endfor
 </table>
 <h3 style="padding-top: 4pt;padding-bottom: 3pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">REMARKS:</h3>
 <div class="hr"></div>
