@@ -179,6 +179,8 @@ class InventoryCategoryController extends Controller
             'wh' => $request->wh,
         ]);
 
+        return redirect()->back();
+
     }
 
 }

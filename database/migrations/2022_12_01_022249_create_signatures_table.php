@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('signature');
             $table->integer('category_id');
-            $table->integer('wh');
+            $table->string('wh');
             $table->timestamps();
         });
     }
