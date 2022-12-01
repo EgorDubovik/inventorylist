@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Addresses;
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
+use App\Models\Signatures;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -162,6 +163,22 @@ class InventoryCategoryController extends Controller
         InventoryList::where('category_id',$category->id)->delete();
         $category->delete();
         return redirect('/category')->with('successful', 'Category has been removed successful');
+    }
+
+
+    public function signature_save(Request $request){
+        $validated  = $request->validate([
+            'category_id' => 'required',
+            'base64' => 'required',
+            'wh' => 'required'
+        ]);
+
+        Signatures::create([
+            'category_id' => $request->category_id,
+            'signature' => $request->base64,
+            'wh' => $request->wh,
+        ]);
+
     }
 
 }

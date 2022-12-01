@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::delete('/remove/{category}', [InventoryCategoryController::class,'destroy']);
        Route::get('/edit/{category}', [InventoryCategoryController::class, 'edit']);
        Route::post('/edit/{category}', [InventoryCategoryController::class, 'update']);
+       Route::post('/signature/save', [InventoryCategoryController::class, 'signature_save']);
    });
 
    Route::prefix('inventory')->group(function (){

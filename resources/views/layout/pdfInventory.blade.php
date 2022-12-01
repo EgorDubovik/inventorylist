@@ -284,7 +284,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
             <td style="width:171pt;">
                 <p >CARRIER SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="carorg">Sign</button>
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -292,7 +292,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
             <td style="width:171pt;">
                 <p>CARRIER SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="cardest">Sign</button>
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -301,14 +301,14 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
             <td style="width:171pt;">
                 <p>CUSTOMER’S SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="cusorg">Sign</button>
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
             <td style="width:171pt;">
                 <p>CUSTOMER’S SIGNATURE</p>
                 <p style="text-align: right">
-                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="cusdest">Sign</button>
+                    <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>
                 </p>
             </td>
             <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
