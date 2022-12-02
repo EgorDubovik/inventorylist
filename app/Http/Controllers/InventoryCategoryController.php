@@ -183,4 +183,8 @@ class InventoryCategoryController extends Controller
 
     }
 
+    public function createPDF(Request $request, InventoryCategory $category){
+
+    }
+
 }

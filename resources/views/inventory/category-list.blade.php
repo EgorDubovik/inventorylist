@@ -52,7 +52,7 @@
                                             @csrf
                                             @method('delete')
 {{--                                            <a href="/inventory/list/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>--}}
-                                            <a href="/inventory/view/pdf/{{$c->id}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
+                                            <a href="{{route('view.category', ['category'=>$c->id])}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
 
                                             @can('update', $c)
                                                 <a href="/inventory/list/{{$c->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>

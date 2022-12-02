@@ -63,7 +63,7 @@
                         @can('create-inventory', $category)
                             <a href="/inventory/create" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#input-modal" style="margin-left: 20px;"><i class="fa fa-plus"></i> Add new furniture</a>
                         @endcan
-                        <a style="margin-left: 20px;" href="/inventory/view/pdf/{{$category->id}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
+                        <a style="margin-left: 20px;" href="{{route('view.category', ['category'=>$category->id])}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
                     </div>
                     <div class="card-body">
                         <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
