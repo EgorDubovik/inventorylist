@@ -22,7 +22,7 @@
                     <a href="{{route('create.pdf', ['category' => $category->id])}}" class="btn btn-success"><i class="fa fa-file-pdf-o"></i> <span class="d-none d-lg-inline">Export PDF</span></a>
                 </div>
                 <div style=" width: 825px;background: #fff; padding: 20px;border-radius: 8px;">
-                    @include('layout/pdfinventory',['category'=>$category])
+                    @include('layout.pdfinventory',['category'=>$category])
                 </div>
             </div>
             <div class="col-4">
