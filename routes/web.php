@@ -56,6 +56,8 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::post('/edit/{category}', [InventoryCategoryController::class, 'update']);
        Route::post('/signature/save', [InventoryCategoryController::class, 'signature_save']);
        Route::get('/view/{category}', [InventoryController::class, 'viewPDF'])->name('view.category');
+       Route::get('/create/pdf/{category}', [InventoryCategoryController::class, 'createPDF'])->name('create.pdf');
+
    });
 
    Route::prefix('inventory')->group(function (){

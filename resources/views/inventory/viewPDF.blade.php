@@ -19,8 +19,11 @@
             <div class="col-8">
                 <div class="category-navigation">
                     <a href="/inventory/list/{{$category->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
+                    <a href="{{route('create.pdf', ['category' => $category->id])}}" class="btn btn-success"><i class="fa fa-file-pdf-o"></i> <span class="d-none d-lg-inline">Export PDF</span></a>
                 </div>
-                @include('layout/pdfinventory',['category'=>$category])
+                <div style=" width: 825px;background: #fff; padding: 20px;border-radius: 8px;">
+                    @include('layout/pdfinventory',['category'=>$category])
+                </div>
             </div>
             <div class="col-4">
 

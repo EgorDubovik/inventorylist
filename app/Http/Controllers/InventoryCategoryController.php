@@ -6,6 +6,7 @@ use App\Models\Addresses;
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
 use App\Models\Signatures;
+use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -184,7 +185,9 @@ class InventoryCategoryController extends Controller
     }
 
     public function createPDF(Request $request, InventoryCategory $category){
+        $pdf = PDF::loadView('layout.pdfInventory',['category' => $category]);
 
+        return $pdf->download('test.pdf');
     }
 
 }
