@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Addresses extends Model
 {
+    use HasFactory;
     protected $table = 'addresses';
     protected $fillable = [
         'street',
@@ -15,5 +16,8 @@ class Addresses extends Model
         'zip'
     ];
 
-    use HasFactory;
+    public function full(){
+        return $this->street.", ".$this->city." ".$this->state.", ".$this->zip;
+    }
+
 }
