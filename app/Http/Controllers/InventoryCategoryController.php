@@ -83,7 +83,7 @@ class InventoryCategoryController extends Controller
             'dest_address' => $dest_address->id
         ]);
 
-        return redirect('/inventory/view/pdf/'.$category->id)->with('successful', 'Inventory category hass bed created successful');
+        return redirect()->route('view.category',['category' =>$category->id])->with('successful', 'Inventory category hass bed created successful');
     }
 
     /**
