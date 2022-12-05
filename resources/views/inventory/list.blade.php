@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-lg-10 col-xl-8">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -33,7 +33,8 @@
                                             <div class="col-md-9">{{$category->addressM->street}}, {{$category->addressM->city}}, {{$category->addressM->state}} {{$category->addressM->zip}}</div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6" style="border-left: 1px solid #ccc ">
+                                    <div style="border-top: 1px solid #ccc;margin: 20px 0" class="d-md-block d-lg-none"></div>
+                                    <div class="col-md-6">
                                         <div class="subtitle-creat-category"> DESTINATION INFORMATION</div>
                                         <div class="row">
                                             <div class="col-md-3 text-muted">Customer name</div>
@@ -116,11 +117,11 @@
                     <input type="hidden" name="lastnumber" value="0">
                     <div class="mb-3">
                         <div class="form-row">
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-6">
                                 <label for="lale-number-f" class="col-form-label">Label number:</label>
                                 <input type="text" class="form-control" id="label-number-f" name="label_number" value="{{($category->inventories->last()) ? ($category->inventories->last()->number+1) : 1}}">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-6">
                                 <label for="lale-count" class="col-form-label">Count:</label>
                                 <input type="text" class="form-control" id="label-number-f" name="count" value="1">
                             </div>
