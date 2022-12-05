@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth','active']],function (){
 
    Route::prefix('/category')->group(function (){
        Route::get('/', [InventoryCategoryController::class, 'index'])->name('categories');
-       Route::get('/create', [InventoryCategoryController::class, 'create']);
+       Route::get('/create', [InventoryCategoryController::class, 'create'])->name('category.create');
        Route::post('/create', [InventoryCategoryController::class, 'store']);
        Route::delete('/remove/{category}', [InventoryCategoryController::class,'destroy']);
        Route::get('/edit/{category}', [InventoryCategoryController::class, 'edit']);
