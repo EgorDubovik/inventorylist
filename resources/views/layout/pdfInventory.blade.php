@@ -95,11 +95,11 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 	<tr>
 		<td>
             <p class="s7" >STREET ADDRESS</p>
-            <p class="cn">{{$category->addressM->street}}</p>
+            <p class="cn">{{$category->addressM->street}} <a href="http://maps.google.com/?q={{$category->addressM->full()}}" target="_blank"><i class="fa fa-map-marker" style="margin-left: 10px; font-size: 18px"></i></a></p>
         </td>
 		<td>
             <p class="s7" >STREET ADDRESS</p>
-            <p class="cn">{{$category->dest_addressM->street}}</p>
+            <p class="cn">{{$category->dest_addressM->street}} <a href="http://maps.google.com/?q={{$category->dest_addressM->full()}}" target="_blank"><i class="fa fa-map-marker" style="margin-left: 10px; font-size: 18px"></i> </a></p>
         </td>
 	</tr>
 </table>
@@ -313,7 +313,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
                 <td style="width:171pt;">
                     <p>CARRIER SIGNATURE</p>
                     <p style="text-align: right">
-                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>
+                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>@endif
                     </p>
                 </td>
                 <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -334,7 +334,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
                 <td style="width:171pt;">
                     <p>CARRIER SIGNATURE</p>
                     <p style="text-align: right">
-                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>
+                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>@endif
                     </p>
                 </td>
                 <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -356,7 +356,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
                 <td style="width:171pt;">
                     <p>CUSTOMER SIGNATURE</p>
                     <p style="text-align: right">
-                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>
+                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>@endif
                     </p>
                 </td>
                 <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -376,7 +376,7 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
                 <td style="width:171pt;">
                     <p>CUSTOMER SIGNATURE</p>
                     <p style="text-align: right">
-                        <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>
+                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>@endif
                     </p>
                 </td>
                 <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>

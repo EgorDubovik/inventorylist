@@ -34,7 +34,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <p><span class="text-muted">Name:</span> <span class="fst-normal">{{$c->customer_name}}</span>  </p>
-                                <p><span class="text-muted">Address:</span> <span class="fst-normal">{{$c->addressM->full()}}</span>  </p>
+                                <p><span class="text-muted">Address:</span> <span class="fst-normal">{{$c->addressM->full()}}</span><a href="http://maps.google.com/?q={{$c->addressM->full()}}" target="_blank"><i class="fa fa-map-marker" style="margin-left: 10px; font-size: 18px"></i> </a>  </p>
                             </div>
                             <div class="card-footer px-0">
 
