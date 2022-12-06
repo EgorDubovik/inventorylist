@@ -48,6 +48,12 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 .it-ft td{
     text-align: center;
 }
+.sign-table{
+    margin-top: 20px;
+}
+.sign-table tr td{
+    height: 55px;
+}
 </style>
 <div style="width: 760px; padding: 20px">
 	<table cellspacing="0">
@@ -290,98 +296,97 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
 <h3 style="padding-top: 4pt;padding-bottom: 3pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">REMARKS:</h3>
 <div class="hr"></div>
 <div class="hr" style="margin-top: 27px"></div>
-<p style="padding-left: 5pt;text-indent: 0pt;line-height: 1pt;text-align: left;"/>
-    <p style="padding-top: 2pt;padding-bottom: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">THIS IS THE INVENTORY AND DESCRIPTION OF THIS SHIPMENT AT ORIGIN AND DESTINATION. ALL CLAIMS FOR LOSS OR EXTERIOR DAMAGE ARE TO BE SUPPORTED BY EXEPTIONS NOTED ABOVE. “WE HAVE CHECKED ALL THE ITEMS LISTED AND ACKNOWLEDGE THAT THIS IS TRUE AND COMPLETE LIST OF THE GOODS TENDERED AND OF THE STATE OF THE GOODS RECEIVED”
-        <span class="h1"><br>WARNING  </span>
-        <span class="h4">BEFORE SIGNING CHECK SHIPMENT, COUNT ITEMS AND DESCRIBE LOSS OR DAMAGE IN SPACE ON THE RIGHT ABOVE.</span>
-    </p>
-    <table cellspacing="0">
-        <tr style="height:26pt" class="s7">
-            <td style="width:45pt;" rowspan="2"><p class="s12" style="padding-top: 7pt;text-indent: 8pt;text-align: center;">AT ORIGIN</p></td>
-            @if($category->signatures->contains('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN))
-                <td style="width:171pt;">
-                    <p>CARRIER SIGNATURE</p>
-                    <p style="text-align: right">
-                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN)->first()->signature}}">
-                    </p>
-                </td>
-                <td style="width:72pt;">
-                    <p style="text-align: center">DATE</p>
-                    <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN)->first()->updated_at)->format('m/d/Y')}}</p>
-                </td>
-            @else
-                <td style="width:171pt;">
-                    <p>CARRIER SIGNATURE</p>
-                    <p style="text-align: right">
-                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>@endif
-                    </p>
-                </td>
-                <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
-            @endif
-            <td style="width:45pt;" rowspan="2"><p class="s13" style="padding-top: 7pt;text-indent: 0pt;text-align: center;">AT DESTINATION</p></td>
-            @if($category->signatures->contains('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION))
-                <td style="width:171pt;">
-                    <p>CARRIER SIGNATURE</p>
-                    <p style="text-align: right">
-                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION)->first()->signature}}">
-                    </p>
-                </td>
-                <td style="width:72pt;">
-                    <p style="text-align: center">DATE</p>
-                    <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION)->first()->updated_at)->format('m/d/Y')}}</p>
-                </td>
-            @else
-                <td style="width:171pt;">
-                    <p>CARRIER SIGNATURE</p>
-                    <p style="text-align: right">
-                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>@endif
-                    </p>
-                </td>
-                <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
-            @endif
-        </tr>
-        <tr style="height:24pt">
-            @if($category->signatures->contains('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN))
-                <td style="width:171pt;">
-                    <p>CUSTOMER SIGNATURE</p>
-                    <p style="text-align: right">
-                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN)->first()->signature}}">
-                    </p>
-                </td>
-                <td style="width:72pt;">
-                    <p style="text-align: center">DATE</p>
-                    <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN)->first()->updated_at)->format('m/d/Y')}}</p>
-                </td>
-            @else
-                <td style="width:171pt;">
-                    <p>CUSTOMER SIGNATURE</p>
-                    <p style="text-align: right">
-                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>@endif
-                    </p>
-                </td>
-                <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
-            @endif
-            @if($category->signatures->contains('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION))
-                <td style="width:171pt;">
-                    <p>CUSTOMER SIGNATURE</p>
-                    <p style="text-align: right">
-                        <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION)->first()->signature}}">
-                    </p>
-                </td>
-                <td style="width:72pt;">
-                    <p style="text-align: center">DATE</p>
-                    <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION)->first()->updated_at)->format('m/d/Y')}}</p>
-                </td>
-            @else
-                <td style="width:171pt;">
-                    <p>CUSTOMER SIGNATURE</p>
-                    <p style="text-align: right">
-                        @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>@endif
-                    </p>
-                </td>
-                <td style="width:72pt;"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
-            @endif
-        </tr>
-    </table>
+<p style="padding-top: 2pt;padding-bottom: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">THIS IS THE INVENTORY AND DESCRIPTION OF THIS SHIPMENT AT ORIGIN AND DESTINATION. ALL CLAIMS FOR LOSS OR EXTERIOR DAMAGE ARE TO BE SUPPORTED BY EXEPTIONS NOTED ABOVE. “WE HAVE CHECKED ALL THE ITEMS LISTED AND ACKNOWLEDGE THAT THIS IS TRUE AND COMPLETE LIST OF THE GOODS TENDERED AND OF THE STATE OF THE GOODS RECEIVED”
+    <span class="h1"><br>WARNING  </span>
+    <span class="h4">BEFORE SIGNING CHECK SHIPMENT, COUNT ITEMS AND DESCRIBE LOSS OR DAMAGE IN SPACE ON THE RIGHT ABOVE.</span>
+</p>
+<table class="sign-table">
+    <tr >
+        <td style="width:8%;" rowspan="2"><p class="s12" style="padding-top: 7pt;text-indent: 8pt;text-align: center;">AT ORIGIN</p></td>
+        @if($category->signatures->contains('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN))
+            <td style="width:30%">
+                <p>CARRIER SIGNATURE</p>
+                <p style="text-align: right">
+                    <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN)->first()->signature}}">
+                </p>
+            </td>
+            <td style="width:11%">
+                <p style="text-align: center">DATE</p>
+                <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_ORIGIN)->first()->updated_at)->format('m/d/Y')}}</p>
+            </td>
+        @else
+            <td style="width:30%">
+                <p>CARRIER SIGNATURE</p>
+                <p style="text-align: right">
+                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>@endif
+                </p>
+            </td>
+            <td style="width:11%"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+        @endif
+        <td style="width:8%" rowspan="2"><p class="s13" style="padding-top: 7pt;text-indent: 0pt;text-align: center;">AT DESTINATION</p></td>
+        @if($category->signatures->contains('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION))
+            <td style="width: 30%">
+                <p>CARRIER SIGNATURE</p>
+                <p style="text-align: right">
+                    <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION)->first()->signature}}">
+                </p>
+            </td>
+            <td style="width:11%">
+                <p style="text-align: center">DATE</p>
+                <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION)->first()->updated_at)->format('m/d/Y')}}</p>
+            </td>
+        @else
+            <td style="width:30%">
+                <p>CARRIER SIGNATURE</p>
+                <p style="text-align: right">
+                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>@endif
+                </p>
+            </td>
+            <td style="width:11%"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+        @endif
+    </tr>
+    <tr >
+        @if($category->signatures->contains('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN))
+            <td>
+                <p>CUSTOMER SIGNATURE</p>
+                <p style="text-align: right">
+                    <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN)->first()->signature}}">
+                </p>
+            </td>
+            <td>
+                <p style="text-align: center">DATE</p>
+                <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_ORIGIN)->first()->updated_at)->format('m/d/Y')}}</p>
+            </td>
+        @else
+            <td>
+                <p>CUSTOMER SIGNATURE</p>
+                <p style="text-align: right">
+                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>@endif
+                </p>
+            </td>
+            <td><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+        @endif
+        @if($category->signatures->contains('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION))
+            <td>
+                <p>CUSTOMER SIGNATURE</p>
+                <p style="text-align: right">
+                    <img width="79" src="{{$category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION)->first()->signature}}">
+                </p>
+            </td>
+            <td>
+                <p style="text-align: center">DATE</p>
+                <p style="text-align: center;padding-top: 5px;font-size: 10px;">{{\Carbon\Carbon::parse($category->signatures->where('wh',\App\Models\Signatures::CUSTOMER_AT_DESTINATION)->first()->updated_at)->format('m/d/Y')}}</p>
+            </td>
+        @else
+            <td>
+                <p>CUSTOMER SIGNATURE</p>
+                <p style="text-align: right">
+                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>@endif
+                </p>
+            </td>
+            <td><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
+        @endif
+    </tr>
+</table>
 </div>
 
