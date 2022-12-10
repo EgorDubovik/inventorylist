@@ -54,6 +54,36 @@
                     </div>
                 </div>
 
+                {{-- Accesses                --}}
+                <div class="row">
+                    <div class="col-lg-10 col-xl-8">
+                        <div class="card">
+                            <div class="card-header">Accesses</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 text-muted">Creator:</div>
+                                    <div class="col-md-9">
+                                        {{$category->creater->name}}
+                                        @foreach($category->creater->roles as $role)
+                                            <span class="tag tag-{{\App\Models\Role::TAGS[$role->role]}}">{{\App\Models\Role::ROLES[$role->role]}}</span>
+                                        @endforeach
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 text-muted">Has access:</div>
+                                    <div class="col-md-9">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- END Accesses               --}}
+
                 @include('layout/success-message',['status' => 'successful'])
                 @if($errors->any())
                     @include("layout/error-message")
