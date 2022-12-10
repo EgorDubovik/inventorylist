@@ -61,8 +61,8 @@
                             <div class="card-header">Accesses</div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-3 text-muted">Creator:</div>
-                                    <div class="col-md-9">
+                                    <div class="col-3 text-muted">Creator:</div>
+                                    <div class="col-9">
                                         {{$category->creater->name}}
                                         @foreach($category->creater->roles as $role)
                                             <span class="tag tag-{{\App\Models\Role::TAGS[$role->role]}}">{{\App\Models\Role::ROLES[$role->role]}}</span>
@@ -70,14 +70,30 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3 text-muted">Has access:</div>
-                                    <div class="col-md-9">
+                                    <div class="col-3 text-muted">Has access:</div>
+                                    <div class="col-9">
 
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
 
+                            <div class="card-footer">
+                                <form >
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <select class="form-control" id="exampleFormControlSelect1">
+                                                @foreach(\App\Models\User::employens(Auth::user()->company_id) as $user)
+                                                    @if($user->id !== Auth::user()->id && $user->id != $category->user_id)
+                                                        <option>{{$user->name}}</option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn btn-success">Add</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

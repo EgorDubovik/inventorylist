@@ -52,4 +52,9 @@ class User extends Authenticatable
     public function roles(){
         return $this->hasMany(Role::class);
     }
+
+    public static function employens($company_id){
+        $quary = User::where(['company_id'=>$company_id,'active' => 1])->get();
+        return $quary;
+    }
 }
