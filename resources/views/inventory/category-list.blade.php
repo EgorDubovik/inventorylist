@@ -30,32 +30,35 @@
 
                 <div class="row">
                     @foreach($category as $c)
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <p><span class="text-muted">Name:</span> <span class="fst-normal">{{$c->customer_name}}</span>  </p>
-                                <p><span class="text-muted">Address:</span> <span class="fst-normal">{{$c->addressM->full()}}</span><a href="http://maps.google.com/?q={{$c->addressM->full()}}" target="_blank"><i class="fa fa-map-marker" style="margin-left: 10px; font-size: 18px"></i> </a>  </p>
-                            </div>
-                            <div class="card-footer px-0">
+                        @can('view-category',$c)
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><span class="text-muted">Name:</span> <span class="fst-normal">{{$c->customer_name}}</span>  </p>
+                                    <p><span class="text-muted">Address:</span> <span class="fst-normal">{{$c->addressM->full()}}</span><a href="http://maps.google.com/?q={{$c->addressM->full()}}" target="_blank"><i class="fa fa-map-marker" style="margin-left: 10px; font-size: 18px"></i> </a>  </p>
+                                </div>
+                                <div class="card-footer px-0">
 
-                                    <form action="/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
-                                        @csrf
-                                        @method('delete')
-                                        <div class="btn-group col-12">
-                                        <a href="{{route('view.category', ['category'=>$c->id])}}" class="btn btn-success col-4"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
+                                        <form action="/category/remove/{{$c->id}}" method="post" onsubmit="confirm_remove(this);return false">
+                                            @csrf
+                                            @method('delete')
+                                            <div class="btn-group col-12">
 
-                                        @can('update', $c)
-                                            <a href="/inventory/list/{{$c->id}}" class="btn btn-warning col-4"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
-                                        @endcan
-                                        @can('delete', $c)
-                                            <button type="submit" class="btn btn-danger col-4"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">remove</span></button>
-                                        @endcan
-                                        </div>
-                                    </form>
+                                            <a href="{{route('view.category', ['category'=>$c->id])}}" class="btn btn-success col-4"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
 
+                                            @can('update', $c)
+                                                <a href="/inventory/list/{{$c->id}}" class="btn btn-warning col-4"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
+                                            @endcan
+                                            @can('delete', $c)
+                                                <button type="submit" class="btn btn-danger col-4"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">remove</span></button>
+                                            @endcan
+                                            </div>
+                                        </form>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        @endcan
                     @endforeach
                 </div>
 {{--                <div class="card">--}}

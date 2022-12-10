@@ -32,7 +32,7 @@ class InventoryCategoryPolicy
      */
     public function view(User $user, InventoryCategory $inventoryCategory)
     {
-        //
+        return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) || $user->id == $inventoryCategory->user_id;
     }
 
     /**

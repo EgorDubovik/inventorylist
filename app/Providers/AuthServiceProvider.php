@@ -31,6 +31,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // users
         Gate::define('view-users-list',function (User $user){
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });
@@ -43,6 +44,12 @@ class AuthServiceProvider extends ServiceProvider
             return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()); // Only admin can view users list
         });
 
+        // category
+        Gate::define('view-category', function (User $user, InventoryCategory $category){
+            return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) || $user->id == $category->user_id;
+        });
+
+        // list
         Gate::define('create-inventory', function (User $user, InventoryCategory $category){
             $roles = Auth::user()->roles->pluck('role')->toArray();
             if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))

@@ -11,12 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class InventoryController extends Controller
 {
 
-
     public function index(Request $request, InventoryCategory $category){
 
-
-
+        $this->authorize('view-category', $category);
         return view('inventory.list',['category' => $category]);
+
     }
 
     public function store(Request $request){
@@ -81,8 +80,4 @@ class InventoryController extends Controller
 
     }
 
-    public function viewPDF(InventoryCategory $category){
-//        dd($category->signatures->where('wh',\App\Models\Signatures::CARRIER_AT_DESTINATION));
-        return view('inventory.viewPDF',['category'=>$category]);
-    }
 }
