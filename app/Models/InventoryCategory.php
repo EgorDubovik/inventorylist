@@ -21,7 +21,8 @@ class InventoryCategory extends Model
         'customer_phone',
         'dest_customer_phone',
         'address',
-        'dest_address'
+        'dest_address',
+        'order_number',
     ];
 
     public function creater(){

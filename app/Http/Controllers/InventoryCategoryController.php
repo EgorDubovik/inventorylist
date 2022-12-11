@@ -77,12 +77,15 @@ class InventoryCategoryController extends Controller
         ]);
 
         $category = InventoryCategory::create([
-            'user_id' => Auth::user()->id,
-            'company_id' => Auth::user()->company_id,
-            'customer_name' => $request->customer_name,
-            'dest_customer_name' => $request->dest_customer_name,
-            'address' => $address->id,
-            'dest_address' => $dest_address->id
+            'user_id'               => Auth::user()->id,
+            'company_id'            => Auth::user()->company_id,
+            'customer_name'         => $request->customer_name,
+            'customer_phone'        => $request->customer_phone,
+            'dest_customer_name'    => $request->dest_customer_name,
+            'dest_customer_phone'   => $request->dest_customer_phone,
+            'address'               => $address->id,
+            'dest_address'          => $dest_address->id,
+            'order_number'          => $request->order_number,
         ]);
 
         return redirect()->route('view.category',['category' =>$category->id])->with('successful', 'Inventory category hass bed created successful');
