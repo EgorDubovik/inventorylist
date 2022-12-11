@@ -12,6 +12,12 @@ class InventoryCategory extends Model
     use HasFactory;
 
     protected $table = 'inventory_category';
+    public const PADDING = 0;
+    public const PICKED_UP = 1;
+    public const DELIVERED = 2;
+    public const ARCHIVE = 4;
+
+    public const STATUS = ['Created', 'Picked Up', 'Delivered', 'Archived'];
 
     protected $fillable = [
         'user_id',
@@ -23,6 +29,7 @@ class InventoryCategory extends Model
         'address',
         'dest_address',
         'order_number',
+        'status',
     ];
 
     public function creater(){

@@ -15,19 +15,34 @@
         </div>
         <!-- PAGE-HEADER END -->
         <!-- CONTENT -->
-        <div class="row">
-            <div class="col-8">
-                <div class="category-navigation">
-                    <a href="/inventory/list/{{$category->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
-                    <a href="{{route('create.pdf', ['category' => $category->id])}}" class="btn btn-success"><i class="fa fa-file-pdf-o"></i> <span class="d-none d-lg-inline">Export PDF</span></a>
+        <div class="row justify-content-md-center">
+            <div class="col-6 mt-auto">
+                <div class="category-navigation row">
+                    <div class="col-2">
+                        <a href="{{route('create.pdf', ['category' => $category->id])}}" class="btn btn-success"><i class="fa fa-file-pdf-o"></i> <span class="d-none d-lg-inline">Export PDF</span></a>
+                    </div>
+                    @can('update', $category)
+                        <div class="col-2">
+                            <a href="/inventory/list/{{$category->id}}" class="btn btn-warning"><i class="fa fa-pencil"></i> <span class="d-none d-lg-inline">edit</span></a>
+                        </div>
+                    @endcan
+                    <div class="col-8" style="text-align: right">
+                        <span class="text-muted" style="margin-left: 20px;"> Status: </span>
+                        <span>{{\App\Models\InventoryCategory::STATUS[$category->status]}}</span>
+                        @can('update',$category)
+                            @if($category->status==0)
+                                <button class="btn btn-blue" style="margin-left: 10px;">Change to PICKED UP</button>
+                            @elseif($category->status==1)
+                                <button class="btn btn-blue" style="margin-left: 10px;">Change to DELIVERED</button>
+                            @endif
+                        @endcan
+                    </div>
                 </div>
                 <div style=" width: 825px;background: #fff; padding: 20px;border-radius: 8px;">
                     @include('layout.pdfInventory',['category'=>$category])
                 </div>
             </div>
-            <div class="col-4">
 
-            </div>
         </div>
     </div>
 
