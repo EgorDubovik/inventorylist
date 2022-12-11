@@ -62,7 +62,7 @@
                                                     <input type="text" placeholder="State" class="form-control" name="state">
                                                 </div>
 
-                                                <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                                                <label class="col-sm-2 control-label" for="textinput">Zip</label>
                                                 <div class="col-sm-4">
                                                     <input type="text" placeholder="Post Code" class="form-control" name="zip">
                                                 </div>
@@ -103,7 +103,7 @@
                                                     <input type="text" placeholder="State" class="form-control" name="dest_state">
                                                 </div>
 
-                                                <label class="col-sm-2 control-label" for="textinput">Postcode</label>
+                                                <label class="col-sm-2 control-label" for="textinput">Zip</label>
                                                 <div class="col-sm-4">
                                                     <input type="text" placeholder="Post Code" class="form-control" name="dest_zip">
                                                 </div>
