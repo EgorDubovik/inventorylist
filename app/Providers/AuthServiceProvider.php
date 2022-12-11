@@ -46,7 +46,7 @@ class AuthServiceProvider extends ServiceProvider
 
         // category
         Gate::define('view-category', function (User $user, InventoryCategory $category){
-            return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) || $user->id == $category->user_id;
+            return in_array(Role::ADMIN,$user->roles->pluck('role')->toArray()) || $user->id == $category->user_id || $category->accesses->contains('user_id',$user->id) ;
         });
 
         // list

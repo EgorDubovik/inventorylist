@@ -32,7 +32,7 @@ class InventoryCategoryPolicy
      */
     public function view(User $user, InventoryCategory $inventoryCategory)
     {
-        return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) || $user->id == $inventoryCategory->user_id;
+        return in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) || $user->id == $inventoryCategory->user_id || $inventoryCategory->accesses->contains('user_id',$user->id);
     }
 
     /**
@@ -59,7 +59,7 @@ class InventoryCategoryPolicy
     public function update(User $user, InventoryCategory $category)
     {
         $roles = Auth::user()->roles->pluck('role')->toArray();
-        if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
+        if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id) || $category->accesses->contains('user_id',$user->id));
             return true;
         return false;
     }
@@ -74,7 +74,7 @@ class InventoryCategoryPolicy
     public function delete(User $user, InventoryCategory $category)
     {
         $roles = Auth::user()->roles->pluck('role')->toArray();
-        if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id))
+        if ((in_array(Role::ADMIN, $roles) && $category->company_id == $user->company_id) || (in_array(Role::FORMAN, $roles) && $user->id == $category->user_id) || $category->accesses->contains('user_id',$user->id))
             return true;
         return false;
     }
