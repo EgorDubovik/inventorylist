@@ -137,7 +137,10 @@ class InventoryCategoryController extends Controller
 
         $category->update([
             'customer_name' => $request->customer_name,
+            'customer_phone' => $request->customer_phone,
             'dest_customer_name' => $request->dest_customer_name,
+            'dest_customer_phone' => $request->dest_customer_phone,
+            'order_number' => $request->order_number,
         ]);
 
         $category->addressM()->update([

@@ -28,13 +28,30 @@
                             @endif
                             <form method="post" class="form-horizontal category-create">
                                 @csrf
-                                <div class="row" style="padding-bottom: 20px;">
+
+                                <div class="row">
+                                    <div class="col-2">Order number:</div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" placeholder="Order number" name="order_number" value="{{$category->order_number}}">
+                                    </div>
+                                </div>
+
+                                <div class="row mt-4" style="padding-bottom: 20px;">
                                     <div class="col-md-6">
                                         <div class="subtitle-creat-category"> ORIGIN INFORMATION</div>
-                                        <div class="row mb-4">
-                                            <label for="inputName" class="col-md-3 form-label" style="font-size: 13px;">Customer Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" id="inputName" placeholder="Customer Name" name="customer_name" value="{{$category->customer_name}}">
+                                        <div class="category-create-address">Customer </div>
+                                        <div style="margin-left: 20px;">
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Name</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control customer_name"  placeholder="Customer Name"  name="customer_name" value="{{$category->customer_name}}">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Phone</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control customer_phone" placeholder="Phone number" name="customer_phone" value="{{$category->customer_phone}}">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -73,10 +90,19 @@
 
                                     <div class="col-md-6" style="border-left: 1px solid #ccc ">
                                         <div class="subtitle-creat-category"> DESTINATION INFORMATION</div>
-                                        <div class="row mb-4">
-                                            <label for="inputName" class="col-md-3 form-label" style="font-size: 13px;">Customer Name</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" id="inputName" placeholder="Customer Name" name="dest_customer_name" value="{{$category->dest_customer_name}}">
+                                        <div class="category-create-address">Customer</div>
+                                        <div style="margin-left: 20px;">
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Name</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control dest_customer_name"  placeholder="Customer Name" name="dest_customer_name" value="{{$category->dest_customer_name}}">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Phone</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control dest_customer_phone" placeholder="Phone number" name="dest_customer_phone" value="{{$category->dest_customer_phone}}">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="category-create-address">Address</div>

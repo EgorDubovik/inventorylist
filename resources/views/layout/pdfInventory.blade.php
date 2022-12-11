@@ -77,8 +77,10 @@ div.hr{ border-top: 1px solid #000;margin-top: 15px;margin-left: 10px; }
         </tr><tr style="height:18pt">
             <td ><p>VAN #:</p></td>
             <td ><p>TAPE COLOR</p></td>
-        </tr><tr style="height:19pt">
-            <td ><p>ORDER #:</p></td>
+        </tr><tr>
+            <td >
+                <p class="s1">ORDER #: <span class="s2">{{$category->order_number}}</span></p>
+            </td>
             <td ><p>Pick Up Date:</p></td>
         </tr>
 </table>
