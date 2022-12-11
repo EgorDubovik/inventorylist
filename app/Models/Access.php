@@ -16,4 +16,8 @@ class Access extends Model
         'category_id',
         'creator_id',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

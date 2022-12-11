@@ -69,10 +69,17 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mt-2">
                                     <div class="col-3 text-muted">Has access:</div>
                                     <div class="col-9">
-
+                                        @foreach($category->accesses as $access)
+                                            <div>
+                                                {{$access->user->name}}
+                                                @foreach($access->user->roles as $role)
+                                                    <span class="tag tag-{{\App\Models\Role::TAGS[$role->role]}}">{{\App\Models\Role::ROLES[$role->role]}}</span>
+                                                @endforeach
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

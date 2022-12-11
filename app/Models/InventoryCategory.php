@@ -43,4 +43,9 @@ class InventoryCategory extends Model
     public function signatures(){
         return $this->hasMany(Signatures::class,'category_id');
     }
+
+    public function accesses(){
+        return $this->hasMany(Access::class,'category_id');
+    }
+
 }
