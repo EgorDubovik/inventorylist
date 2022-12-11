@@ -78,13 +78,14 @@
                             </div>
 
                             <div class="card-footer">
-                                <form >
+                                <form method="post" action="{{route('category.assign.access',['category'=>$category])}}">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-8">
-                                            <select class="form-control" id="exampleFormControlSelect1">
+                                            <select class="form-control" id="exampleFormControlSelect1" name="user_id">
                                                 @foreach(\App\Models\User::employens(Auth::user()->company_id) as $user)
                                                     @if($user->id !== Auth::user()->id && $user->id != $category->user_id)
-                                                        <option>{{$user->name}}</option>
+                                                        <option value="{{$user->id}}">{{$user->name}}</option>
                                                     @endif
                                                 @endforeach
                                             </select>

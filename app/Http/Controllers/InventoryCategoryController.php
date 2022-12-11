@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Access;
 use App\Models\Addresses;
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
 use App\Models\Signatures;
+use App\Models\User;
 use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -188,6 +190,19 @@ class InventoryCategoryController extends Controller
         $pdf = PDF::loadView('layout.pdfInventory',['category' => $category,'print'=>true]);
 
         return $pdf->download('test.pdf');
+    }
+
+    public function assign_access(Request $request, InventoryCategory $category){
+        // check if user id belongs to my company
+        $my_users = User::employens(Auth::user()->company_id);
+        if($my_users->contains('id',$request->user_id)){
+            Access::updateOrCreate([
+               'user_id' => $request->user_id,
+                'category_id' => $category->id,
+                'creator_id' => Auth::user()->id,
+            ]);
+        }
+        return back();
     }
 
 }
