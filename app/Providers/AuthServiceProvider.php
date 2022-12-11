@@ -63,5 +63,10 @@ class AuthServiceProvider extends ServiceProvider
             return false;
         });
 
+        // Acceess to category
+        Gate::define('access-create-update',function (User $user, InventoryCategory $category){
+            return (in_array(Role::ADMIN,Auth::user()->roles->pluck('role')->toArray()) && Auth::user()->company_id == $category->company_id );
+        });
+
     }
 }

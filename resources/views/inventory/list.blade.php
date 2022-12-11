@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            @can('access-create-update',$category)
                             <div class="card-footer">
                                 <form method="post" action="{{route('category.assign.access',['category'=>$category])}}">
                                     @csrf
@@ -103,6 +103,7 @@
                                     </div>
                                 </form>
                             </div>
+                            @endcan
                         </div>
                     </div>
                 </div>

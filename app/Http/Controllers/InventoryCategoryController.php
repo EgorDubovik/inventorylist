@@ -193,6 +193,9 @@ class InventoryCategoryController extends Controller
     }
 
     public function assign_access(Request $request, InventoryCategory $category){
+
+        $this->authorize('update-inventory', $category);
+
         // check if user id belongs to my company
         $my_users = User::employens(Auth::user()->company_id);
         if($my_users->contains('id',$request->user_id)){
