@@ -78,9 +78,14 @@
                                                 @foreach($access->user->roles as $role)
                                                     <span class="tag tag-{{\App\Models\Role::TAGS[$role->role]}}">{{\App\Models\Role::ROLES[$role->role]}}</span>
                                                 @endforeach
+                                                @can('access-create-update',$category)
+                                                    <a style="margin-left: 20px; color: red;font-size: 17px;" href="{{route('access.remove',['user' => $access->user,'category'=>$category])}}"><i class="fa fa-trash"></i> </a>
+                                                @endcan
                                             </div>
+
                                         @endforeach
                                     </div>
+
                                 </div>
                             </div>
                             @can('access-create-update',$category)

@@ -57,7 +57,9 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::post('/signature/save', [InventoryCategoryController::class, 'signature_save']);
        Route::get('/view/{category}', [InventoryCategoryController::class, 'show'])->name('view.category');
        Route::get('/create/pdf/{category}', [InventoryCategoryController::class, 'createPDF'])->name('create.pdf');
+       // Access
        Route::post('/access/assign/{category}', [InventoryCategoryController::class, 'assign_access'])->name('category.assign.access');
+       Route::get('/access/remove/{user}/{category}', [InventoryCategoryController::class, 'access_remove'])->name('access.remove');
 
    });
 

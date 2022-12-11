@@ -214,4 +214,12 @@ class InventoryCategoryController extends Controller
         return back();
     }
 
+    public function access_remove(Request $request, User $user,InventoryCategory $category){
+        $this->authorize('access-create-update', $category);
+        $access = Access::where('category_id', $category->id)
+                        ->where('user_id',$user->id);
+        $access->delete();
+        return back();
+    }
+
 }
