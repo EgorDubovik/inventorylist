@@ -31,3 +31,10 @@
     border-radius: 3px;
     box-shadow: 1px 1px 5px #ccc;
 }
+.category-status-card{
+    margin-right: 30px;
+    margin-top:5px;
+    z-index: 1;
+    font-size: 20px;
+    color: #6c5ffc
+}

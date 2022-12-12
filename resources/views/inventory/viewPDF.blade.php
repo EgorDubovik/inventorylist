@@ -31,9 +31,9 @@
                         <span>{{\App\Models\InventoryCategory::STATUS[$category->status]}}</span>
                         @can('update',$category)
                             @if($category->status==0)
-                                <button class="btn btn-blue" style="margin-left: 10px;">Change to PICKED UP</button>
+                                <a href="{{route('change.status',['category'=>$category,'status' => \App\Models\InventoryCategory::PICKED_UP])}}" class="btn btn-blue" style="margin-left: 10px;">Change to PICKED UP</a>
                             @elseif($category->status==1)
-                                <button class="btn btn-blue" style="margin-left: 10px;">Change to DELIVERED</button>
+                                <a href="{{route('change.status',['category'=>$category,'status' => \App\Models\InventoryCategory::DELIVERED])}}" class="btn btn-blue" style="margin-left: 10px;">Change to DELIVERED</a>
                             @endif
                         @endcan
                     </div>

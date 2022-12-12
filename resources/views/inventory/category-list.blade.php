@@ -32,7 +32,14 @@
                     @foreach($category as $c)
                         @can('view-category',$c)
                         <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="card">
+                            <span class="text-right position-absolute top-0 end-0 category-status-card">
+                            @if($c->status==1)
+                                <i class="bi bi-check"></i>
+                            @elseif($c->status == 2)
+                                <i class="bi bi-check-all"></i>
+                            @endif
+                            </span>
+                            <div class="card position-relative">
                                 <div class="card-body">
                                     <p  style="text-align: center"><span class="text-muted">Order number:</span> <span class="fst-normal">{{$c->order_number}}</span>  </p>
                                     <p><span class="text-muted">Created by:</span> <span class="fst-normal">{{$c->creater->name}}</span>  </p>

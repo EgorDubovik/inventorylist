@@ -222,4 +222,12 @@ class InventoryCategoryController extends Controller
         return back();
     }
 
+    public function change_status(Request $request,InventoryCategory $category, $status){
+        $this->authorize('update',$category);
+        $category->update([
+            'status' => $status,
+        ]);
+        return back();
+    }
+
 }
