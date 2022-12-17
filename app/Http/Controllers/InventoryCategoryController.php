@@ -195,7 +195,8 @@ class InventoryCategoryController extends Controller
     public function createPDF(Request $request, InventoryCategory $category){
         $pdf = PDF::loadView('layout.pdfInventory',['category' => $category,'print'=>true]);
 
-        return $pdf->download('test.pdf');
+//        return $pdf->download('test.pdf');
+        return $pdf->stream();
     }
 
     public function assign_access(Request $request, InventoryCategory $category){

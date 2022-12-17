@@ -19,7 +19,7 @@
             <div class="col-6 mt-auto">
                 <div class="category-navigation row">
                     <div class="col-2">
-                        <a href="{{route('create.pdf', ['category' => $category->id])}}" class="btn btn-success"><i class="fa fa-file-pdf-o"></i> <span class="d-none d-lg-inline">Export PDF</span></a>
+                        <a href="{{route('create.pdf', ['category' => $category->id])}}" target="_blank" class="btn btn-success"><i class="fa fa-file-pdf-o"></i> <span class="d-none d-lg-inline">Export PDF</span></a>
                     </div>
                     @can('update', $category)
                         <div class="col-2">
