@@ -89,7 +89,7 @@ ol.nb {
             <td ><p>TAPE COLOR</p></td>
         </tr><tr>
             <td >
-                <p class="s1">ORDER #: <span class="s2">{{$category->order_number}}</span></p>
+{{--                <p class="s1">ORDER #: <span class="s2">{{$category->order_number}}</span></p>--}}
             </td>
             <td ><p>Pick Up Date:</p></td>
         </tr>
@@ -212,18 +212,17 @@ ol.nb {
 		<td style="width: 7%"><p class="s10" >CONDITION AT<br>ORIGIN</p></td>
 		<td style="width: 7%"><p class="s10" >EXEPTIONS (IF ANY)<br>AT DESTINATION</p></td>
 	</tr>
-
-    @for($i = 0; $i < $category->inventories->count(); $i+=2)
+    @for($i = $inventories->keys()->first(); $i < $inventories->count()+$inventories->keys()->first(); $i+=2)
     <tr style="height:16pt">
-        <td style="text-align: center"><p class="s11" >{{$category->inventories[$i]->number}}</p></td>
+        <td style="text-align: center"><p class="s11" >{{$inventories[$i]->number}}</p></td>
 		<td ><p ></p></td>
-		<td ><p class="fn">{{$category->inventories[$i]->furniture_name}}</p></td>
+		<td ><p class="fn">{{$inventories[$i]->furniture_name}}</p></td>
 		<td ><p ><br/></p></td>
 		<td ><p ><br/></p></td>
-        @if($category->inventories->count()>$i+1)
-		<td style="text-align: center"><p class="s11">{{$category->inventories[$i+1]->number}}</p></td>
+        @if($inventories->count()+$inventories->keys()->first()>$i+1)
+		<td style="text-align: center"><p class="s11">{{$inventories[$i+1]->number}}</p></td>
 		<td ><p ><br/></p></td>
-		<td ><p class="fn">{{$category->inventories[$i+1]->furniture_name}}</p></td>
+		<td ><p class="fn">{{$inventories[$i+1]->furniture_name}}</p></td>
 		<td ><p ><br/></p></td>
 		<td ><p ><br/></p></td>
         @endif
@@ -257,7 +256,7 @@ ol.nb {
             <td style="width:30%">
                 <p>CARRIER SIGNATURE</p>
                 <p class="signature">
-                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>@endif
+{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>@endif--}}
                 </p>
             </td>
             <td style="width:11%"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -278,7 +277,7 @@ ol.nb {
             <td style="width:30%">
                 <p>CARRIER SIGNATURE</p>
                 <p class="signature">
-                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>@endif
+{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>@endif--}}
                 </p>
             </td>
             <td style="width:11%"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -300,7 +299,7 @@ ol.nb {
             <td>
                 <p>CUSTOMER SIGNATURE</p>
                 <p class="signature">
-                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>@endif
+{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>@endif--}}
                 </p>
             </td>
             <td><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
@@ -320,7 +319,7 @@ ol.nb {
             <td>
                 <p>CUSTOMER SIGNATURE</p>
                 <p class="signature">
-                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>@endif
+{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>@endif--}}
                 </p>
             </td>
             <td><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>

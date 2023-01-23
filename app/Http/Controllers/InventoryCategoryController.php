@@ -99,7 +99,7 @@ class InventoryCategoryController extends Controller
      */
     public function show(InventoryCategory $category)
     {
-        return view('inventory.viewPDF',['category'=>$category]);
+        return view('inventory.viewPDF',['category'=>$category, 'inventoriesGroup' => $category->inventories->chunk(74)]);
     }
 
     /**
@@ -193,9 +193,9 @@ class InventoryCategoryController extends Controller
     }
 
     public function createPDF(Request $request, InventoryCategory $category){
-        $pdf = PDF::loadView('layout.pdfInventory',['category' => $category,'print'=>true]);
 
-//        return $pdf->download('test.pdf');
+        $pdf = PDF::loadView('PDF.download',['category' => $category,'inventoriesGroup' => $category->inventories,'print'=>true]);
+        //return $pdf->download('test.pdf');
         return $pdf->stream();
     }
 
