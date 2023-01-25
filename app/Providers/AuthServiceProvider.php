@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\InventoryCategory;
+use App\Models\Item;
 use App\Models\Role;
 use App\Models\User;
 use App\Policies\InventoryCategoryPolicy;
@@ -66,6 +67,16 @@ class AuthServiceProvider extends ServiceProvider
         // Acceess to category
         Gate::define('access-create-update',function (User $user, InventoryCategory $category){
             return (in_array(Role::ADMIN,$user->roles->pluck('role')->toArray()) && $user->company_id == $category->company_id );
+        });
+
+
+        //Settings
+            // Items
+        Gate::define('item-add',function (User $user){
+            return in_array(Role::ADMIN,$user->roles->pluck('role')->toArray());
+        });
+        Gate::define('item-remove',function (User $user, Item $item){
+            return (in_array(Role::ADMIN,$user->roles->pluck('role')->toArray()) && $user->company_id == $item->company_id );
         });
 
     }

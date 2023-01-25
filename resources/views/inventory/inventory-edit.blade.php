@@ -37,7 +37,7 @@
                                     <input type="text" class="form-control" id="furniture" name="furniture" value="{{$inventory->furniture_name}}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Furniture:</label>
+                                    <label for="message-text" class="col-form-label">Сondition:</label>
                                     <input type="text" class="form-control" id="condition" name="condition" value="{{$inventory->condition}}">
                                 </div>
                                 <button class="btn ripple btn-success" type="submit">Save</button>

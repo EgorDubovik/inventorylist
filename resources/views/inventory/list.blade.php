@@ -118,44 +118,48 @@
                 @if($errors->any())
                     @include("layout/error-message")
                 @endif
-                <div class="card">
-                    <div class="card-header">
-                        Inventory list
-                        @can('create-inventory', $category)
-                            <a href="/inventory/create" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#input-modal" style="margin-left: 20px;"><i class="fa fa-plus"></i> Add new furniture</a>
-                        @endcan
-                        <a style="margin-left: 20px;" href="{{route('view.category', ['category'=>$category->id])}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
-                    </div>
-                    <div class="card-body">
-                        <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
-                            <thead>
-                            <tr>
-                                <th>Stik number</th>
-                                <th>Furniture</th>
-                                <th>Condition</th>
-                                <th style="width: 200px">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($category->inventories as $inventory)
+                <div class="row">
+                    <div class="card col-lg-10 col-xl-8">
+                        <div class="card-header">
+                            Inventory list
+                            @can('create-inventory', $category)
+                                <a href="/inventory/create" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#input-modal" style="margin-left: 20px;"><i class="fa fa-plus"></i> Add new furniture</a>
+                            @endcan
+                            <a style="margin-left: 20px;" href="{{route('view.category', ['category'=>$category->id])}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
+                        </div>
+                        <div class="card-body">
+                            <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
+                                <thead>
                                 <tr>
-                                    <td>{{$inventory->number}}</td>
-                                    <td>{{$inventory->furniture_name}}</td>
-                                    <td>{{$inventory->condition}}</td>
-                                    <td>
-                                        @can('update-inventory', $category)
-                                            <form method="post" action="/inventory/destroy/{{$inventory->id}}" onsubmit="remove_item(this);return false;">
-                                                @csrf
-                                                @method('delete')
-                                                <a href="/inventory/edit/{{$inventory->id}}" class="btn btn-warning"><i class="fa fa-edit"></i><span class="d-none d-lg-inline"> Edit</span></a>
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">Remove </span></button>
-                                            </form>
-                                        @endcan
-                                    </td>
+                                    <th>Stik number</th>
+                                    <th>Furniture</th>
+                                    <th>Condition</th>
+                                    <th>Blankets</th>
+                                    <th style="width: 200px">Actions</th>
                                 </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                @foreach($category->inventories as $inventory)
+                                    <tr>
+                                        <td>{{$inventory->number}}</td>
+                                        <td>{{$inventory->furniture_name}}</td>
+                                        <td>{{$inventory->condition}}</td>
+                                        <td>{{$inventory->blankets}}</td>
+                                        <td>
+                                            @can('update-inventory', $category)
+                                                <form method="post" action="/inventory/destroy/{{$inventory->id}}" onsubmit="remove_item(this);return false;">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <a href="/inventory/edit/{{$inventory->id}}" class="btn btn-warning"><i class="fa fa-edit"></i><span class="d-none d-lg-inline"> Edit</span></a>
+                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">Remove </span></button>
+                                                </form>
+                                            @endcan
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -167,7 +171,7 @@
                 <form method="post" action="/inventory/create">
                 <div class="modal-header">
                     <h6 class="modal-title">New inventory item</h6>
-                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <button class="btn-close" onclick="return false;" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
@@ -188,12 +192,25 @@
                         </div>
                     </div>
                     <div class="mb-3 ui-widget">
-                        <label for="furniture" class="col-form-label">Furniture:</label>
+                        <label for="furniture" class="col-form-label">Item:</label>
                         <input type="text" class="form-control" id="furniture" name="furniture">
+                    </div>
+                    <div class="mb-3 ui-widget">
+                        <label for="blankets" class="col-form-label">Blankets:</label>
+                        <input type="text" class="form-control" id="blankets" name="blankets">
                     </div>
                     <div class="mb-3">
                         <label for="condition" class="col-form-label">Condition:</label>
-                        <input type="text" class="form-control" id="condition" name="condition" value="good">
+                        <select class="form-control" name = 'condition'>
+                            <option value="PBO">PBO</option>
+                            <option value="CP">CP</option>
+                            <option value="MCU">MCU</option>
+                            <option value="SC">SC</option>
+                            <option value="BR">BR</option>
+                            <option value="CH">CH</option>
+                            <option value="Z">Z</option>
+                        </select>
+
                     </div>
 
                 </div>
@@ -218,28 +235,7 @@
 
 
         var availableTags = [
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme"
+
         ];
 
         $( "#furniture" ).autocomplete({

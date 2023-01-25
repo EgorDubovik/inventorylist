@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\InventoryCategoryController;
+use App\Http\Controllers\SettingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,5 +71,11 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::delete('/destroy/{inventoryList}', [InventoryController::class, 'destroy']);
        Route::get('/edit/{inventory}' ,[InventoryController::class, 'edit']);
        Route::post('/edit/{inventory}' ,[InventoryController::class, 'update']);
+   });
+
+   Route::prefix('settings')->group(function (){
+       Route::get('/', [SettingsController::class, 'index'])->name('settings.index');
+       Route::post('/item/add', [SettingsController::class, 'add_item'])->name('settings.add.item');
+       Route::get('/item/remove/{item}' , [SettingsController::class, 'remove_item'])->name('settings.remove.item');
    });
 });

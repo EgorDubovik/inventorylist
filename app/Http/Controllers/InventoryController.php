@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
+use App\Models\Item;
 use App\Models\Signatures;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,7 @@ class InventoryController extends Controller
     public function index(Request $request, InventoryCategory $category){
 
         $this->authorize('view-category', $category);
+        $items = Item::where('company_id', Auth::user()->company_id)->get();
         return view('inventory.list',['category' => $category]);
 
     }
@@ -35,12 +37,20 @@ class InventoryController extends Controller
             'furniture.required' => 'Furniture name is required',
         ]);
 
-        for ($i = 0; $i<$request->count; $i++) {
+        $blankets = ($request->blankets) ? $request->blankets : 0;
+        $pices = ($request->count && $request->count>0) ? $request->count : 1;
+        $r = ceil($blankets/$pices);
+        for ($i = 0; $i<$pices; $i++) {
+            $res = 0;
+            if ($blankets>0){
+                $res = ($blankets - $r > 0) ? $r : $blankets;
+            }
             InventoryList::create([
                 'category_id' => $request->cid,
                 'number' => ($i+$request->label_number),
                 'condition' => $request->condition,
                 'furniture_name' => $request->furniture,
+                'blankets' => $blankets,
             ]);
         }
 

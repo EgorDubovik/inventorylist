@@ -16,6 +16,7 @@ class InventoryList extends Model
         'number',
         'furniture_name',
         'condition',
+        'blankets',
     ];
 
     public function category(){
