@@ -234,9 +234,7 @@
         }
 
 
-        var availableTags = [
-
-        ];
+        var availableTags = @json($items)
 
         $( "#furniture" ).autocomplete({
             source: availableTags,

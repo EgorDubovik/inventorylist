@@ -15,8 +15,8 @@ class InventoryController extends Controller
     public function index(Request $request, InventoryCategory $category){
 
         $this->authorize('view-category', $category);
-        $items = Item::where('company_id', Auth::user()->company_id)->get();
-        return view('inventory.list',['category' => $category]);
+        $items = Item::where('company_id', Auth::user()->company_id)->pluck('title')->toArray();
+        return view('inventory.list',['category' => $category,'items'=>$items]);
 
     }
 
