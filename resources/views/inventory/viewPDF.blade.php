@@ -39,14 +39,18 @@
                     </div>
                 </div>
                 @foreach($category->inventories->chunk(74) as $inventoriesGroup)
-                    <div style=" width: 825px;background: #fff; padding: 10px 20px;border-radius: 8px; margin: 10px 0;">
+                    <div style="background: #fff; padding: 10px 20px;border-radius: 8px; margin: 10px 0;">
                         @include('layout.pdfInventory',['category'=>$category,'inventories' => $inventoriesGroup])
                     </div>
                 @endforeach
-
             </div>
-            <div class="col-lg-6">
+        </div>
+        <div class="row">
+            <div class="col-lg-6 m-auto">
                 <div class="card">
+                    <div class="card-header">
+                        Signature pad
+                    </div>
                     <div class="card-body">
                         <table class="sign-table">
                             <tr >

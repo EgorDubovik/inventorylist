@@ -216,15 +216,15 @@ ol.nb {
     @for($i = $inventories->keys()->first(); $i < (($inventories->count() > 37 ) ? 37+$inventories->keys()->first() : $inventories->count()+$inventories->keys()->first()); $i+=1)
     <tr style="height:16pt">
         <td style="text-align: center"><p class="s11" >{{$inventories[$i]->number}}</p></td>
-		<td ><p ></p></td>
+		<td ><p class="fn" style="text-align: center">{{$inventories[$i]->blankets}}</p></td>
 		<td ><p class="fn">{{$inventories[$i]->furniture_name}}</p></td>
-		<td ><p ><br/></p></td>
+		<td ><p style="text-align: center">{{$inventories[$i]->condition}}</p></td>
 		<td ><p ><br/></p></td>
         @if($inventories->count()+$inventories->keys()->first()> $i+37)
-        <td style="text-align: center"><p class="s11">{{$inventories[$i+37]->number}}</p></td>
-        <td ><p ><br/></p></td>
-            <td ><p class="fn">{{$inventories[$i+37]->furniture_name}}</p></td>
-        <td ><p ><br/></p></td>
+        <td style="text-align: center"><p class="s11" >{{$inventories[$i+37]->number}}</p></td>
+        <td ><p class="fn" style="text-align: center">{{$inventories[$i+37]->blankets}}</p></td>
+        <td ><p class="fn">{{$inventories[$i+37]->furniture_name}}</p></td>
+        <td ><p style="text-align: center">{{$inventories[$i+37]->condition}}</p></td>
         <td ><p ><br/></p></td>
         @else
         <td style="text-align: center"><p class="s11"></p></td>
@@ -233,13 +233,6 @@ ol.nb {
         <td ><p ><br/></p></td>
         <td ><p ><br/></p></td>
         @endif
-{{--        @if($inventories->count()+$inventories->keys()->first()>$i+1)--}}
-{{--		<td style="text-align: center"><p class="s11">{{$inventories[$i+1]->number}}</p></td>--}}
-{{--		<td ><p ><br/></p></td>--}}
-{{--		<td ><p class="fn">{{$inventories[$i+1]->furniture_name}}</p></td>--}}
-{{--		<td ><p ><br/></p></td>--}}
-{{--		<td ><p ><br/></p></td>--}}
-{{--        @endif--}}
 	</tr>
     @endfor
 </table>
@@ -269,9 +262,7 @@ ol.nb {
         @else
             <td style="width:30%">
                 <p>CARRIER SIGNATURE</p>
-                <p class="signature">
-{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_ORIGIN}}">Sign</button>@endif--}}
-                </p>
+                <p class="signature"></p>
             </td>
             <td style="width:11%"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
         @endif
@@ -290,9 +281,7 @@ ol.nb {
         @else
             <td style="width:30%">
                 <p>CARRIER SIGNATURE</p>
-                <p class="signature">
-{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CARRIER_AT_DESTINATION}}">Sign</button>@endif--}}
-                </p>
+                <p class="signature"></p>
             </td>
             <td style="width:11%"><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
         @endif
@@ -312,9 +301,7 @@ ol.nb {
         @else
             <td>
                 <p>CUSTOMER SIGNATURE</p>
-                <p class="signature">
-{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_ORIGIN}}">Sign</button>@endif--}}
-                </p>
+                <p class="signature"></p>
             </td>
             <td><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
         @endif
@@ -332,9 +319,7 @@ ol.nb {
         @else
             <td>
                 <p>CUSTOMER SIGNATURE</p>
-                <p class="signature">
-{{--                    @if(!isset($print)) <button class="sign-btn" data-bs-toggle="modal" data-bs-target="#input-modal" data-wh="{{\App\Models\Signatures::CUSTOMER_AT_DESTINATION}}">Sign</button>@endif--}}
-                </p>
+                <p class="signature"></p>
             </td>
             <td><p class="s5" style="padding-left: 27pt;text-indent: 0pt;line-height: 7pt;text-align: left;">DATE</p></td>
         @endif
