@@ -60,6 +60,10 @@ class InventoryCategoryController extends Controller
             'dest_city' => 'required',
             'dest_state' => 'required',
             'dest_zip' => 'required',
+            'order_number' => 'required',
+            'tape_lot_number' => 'required',
+            'tape_color' => 'required',
+            'van_number' => 'required',
         ]);
 
         $address = Addresses::create([
@@ -86,9 +90,12 @@ class InventoryCategoryController extends Controller
             'address'               => $address->id,
             'dest_address'          => $dest_address->id,
             'order_number'          => $request->order_number,
+            'tape_lot_number'       => $request->tape_lot_number,
+            'tape_color'            => $request->tape_color,
+            'van_number'            => $request->van_number,
         ]);
 
-        return redirect()->route('view.category',['category' =>$category->id])->with('successful', 'Inventory category hass bed created successful');
+        return redirect()->route('inventory.list',['category' =>$category->id])->with('successful', 'Inventory category hass bed created successful');
     }
 
     /**
@@ -99,7 +106,7 @@ class InventoryCategoryController extends Controller
      */
     public function show(InventoryCategory $category)
     {
-        return view('inventory.viewPDF',['category'=>$category, 'inventoriesGroup' => $category->inventories->chunk(74)]);
+        return view('inventory.viewPDF',['category'=>$category]);
     }
 
     /**
@@ -133,14 +140,21 @@ class InventoryCategoryController extends Controller
             'dest_city' => 'required',
             'dest_state' => 'required',
             'dest_zip' => 'required',
+            'order_number' => 'required',
+            'tape_lot_number' => 'required',
+            'tape_color' => 'required',
+            'van_number' => 'required',
         ]);
 
         $category->update([
-            'customer_name' => $request->customer_name,
-            'customer_phone' => $request->customer_phone,
-            'dest_customer_name' => $request->dest_customer_name,
-            'dest_customer_phone' => $request->dest_customer_phone,
-            'order_number' => $request->order_number,
+        'customer_name'             => $request->customer_name,
+            'customer_phone'        => $request->customer_phone,
+            'dest_customer_name'    => $request->dest_customer_name,
+            'dest_customer_phone'   => $request->dest_customer_phone,
+            'order_number'          => $request->order_number,
+            'tape_lot_number'       => $request->tape_lot_number,
+            'tape_color'            => $request->tape_color,
+            'van_number'            => $request->van_number,
         ]);
 
         $category->addressM()->update([
@@ -194,8 +208,7 @@ class InventoryCategoryController extends Controller
 
     public function createPDF(Request $request, InventoryCategory $category){
 
-        $pdf = PDF::loadView('PDF.download',['category' => $category,'inventoriesGroup' => $category->inventories,'print'=>true]);
-        //return $pdf->download('test.pdf');
+        $pdf = PDF::loadView('PDF.download',['category' => $category,'print'=>true]);
         return $pdf->stream();
     }
 

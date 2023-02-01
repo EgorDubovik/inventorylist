@@ -29,10 +29,24 @@
                             <form method="post" class="form-horizontal category-create">
                                 @csrf
 
-                                <div class="row">
-                                    <div class="col-2">Order number:</div>
-                                    <div class="col-4">
+                                <div class="row mb-4">
+                                    <div class="col-md-2">Order number:</div>
+                                    <div class="col-md-4">
                                         <input type="text" class="form-control" placeholder="Order number" name="order_number" value="{{old('order_number')}}">
+                                    </div>
+                                    <div class="col-md-2">Tape lot number:</div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" placeholder="Tape lot number:" name="tape_lot_number" value="{{old('tape_lot_number')}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-md-2">Van number:</div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" placeholder="Van number" name="van_number" value="{{old('van_number')}}">
+                                    </div>
+                                    <div class="col-md-2">Tape color:</div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" placeholder="Tape color:" name="tape_color" value="{{old('tape_color')}}">
                                     </div>
                                 </div>
 

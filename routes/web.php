@@ -53,7 +53,7 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::get('/create', [InventoryCategoryController::class, 'create'])->name('category.create');
        Route::post('/create', [InventoryCategoryController::class, 'store']);
        Route::delete('/remove/{category}', [InventoryCategoryController::class,'destroy']);
-       Route::get('/edit/{category}', [InventoryCategoryController::class, 'edit']);
+       Route::get('/edit/{category}', [InventoryCategoryController::class, 'edit'])->name('category.edit');
        Route::post('/edit/{category}', [InventoryCategoryController::class, 'update']);
        Route::post('/signature/save', [InventoryCategoryController::class, 'signature_save']);
        Route::get('/view/{category}', [InventoryCategoryController::class, 'show'])->name('view.category');

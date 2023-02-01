@@ -29,6 +29,9 @@ class InventoryCategory extends Model
         'address',
         'dest_address',
         'order_number',
+        'tape_lot_number',
+        'tape_color',
+        'van_number',
         'status',
     ];
 

@@ -44,13 +44,14 @@ class InventoryController extends Controller
             $res = 0;
             if ($blankets>0){
                 $res = ($blankets - $r > 0) ? $r : $blankets;
+                $blankets -= $r;
             }
             InventoryList::create([
                 'category_id' => $request->cid,
                 'number' => ($i+$request->label_number),
                 'condition' => $request->condition,
                 'furniture_name' => $request->furniture,
-                'blankets' => $blankets,
+                'blankets' => $res,
             ]);
         }
 

@@ -79,18 +79,16 @@ ol.nb {
 
             <p class="s4" style="text-align: center;">HOUSEHOLD GOODS DESCRIPTIVE INVENTORY</p>
             </td>
-            <td width="22%" ><p class="s1" >PAGE NO.    <span style="margin-left: 20px"> NO. OF PAGES</span></p>
+            <td width="22%" ><p class="s1" >PAGE NO. <b>{{($key + 1)}}</b>   <span style="margin-left: 20px"> NO. OF PAGES</span> <b>{{$page_length}}</b></p>
             </td>
         </tr><tr class="s1">
             <td ><p>ICC/MC #: <span class="s2">026561</span></p></td>
-            <td ><p>TAPE LOT NO.</p></td>
-        </tr><tr>
-            <td ><p>VAN #:</p></td>
-            <td ><p>TAPE COLOR</p></td>
-        </tr><tr>
-            <td >
-{{--                <p class="s1">ORDER #: <span class="s2">{{$category->order_number}}</span></p>--}}
-            </td>
+            <td ><p>TAPE LOT NO. <span class="s2">{{$category->tape_lot_number}}</span></p></td>
+        </tr><tr class="s1">
+            <td ><p>VAN #: <span class="s2">{{$category->van_number}}</span></p></td>
+            <td ><p>TAPE COLOR <span class="s2">{{$category->tape_color}}</span></p></td>
+        </tr><tr class="s1">
+            <td ><p>ORDER #: <span class="s2">{{$category->order_number}}</span></p></td>
             <td ><p>Pick Up Date:</p></td>
         </tr>
 </table>
@@ -202,12 +200,12 @@ ol.nb {
 <table >
 	<tr style="height:17pt" class="it-ft">
 		<td class="it-sm" ><p class="s9" >Item No.</p></td>
-		<td class="it-sm"><p class="s9" >CR.<br> REF</p></td>
+		<td class="it-sm"><p class="s9" >BL</p></td>
 		<td ><p class="s9">ARTICLES</p></td>
 		<td style="width: 7%"><p class="s10" >CONDITION AT <br>ORIGIN</p></td>
 		<td style="width: 7%"><p class="s10" >EXEPTIONS (IF ANY) <br>AT DESTINATION</p></td>
 		<td class="it-sm"><p class="s9" >Item No.</p></td>
-		<td class="it-sm"><p class="s9" >CR.<br> REF</p></td>
+		<td class="it-sm"><p class="s9" >BL</p></td>
 		<td ><p class="s9" >ARTICLES</p></td>
 		<td style="width: 7%"><p class="s10" >CONDITION AT<br>ORIGIN</p></td>
 		<td style="width: 7%"><p class="s10" >EXEPTIONS (IF ANY)<br>AT DESTINATION</p></td>

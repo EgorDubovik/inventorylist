@@ -38,9 +38,9 @@
                         @endcan
                     </div>
                 </div>
-                @foreach($category->inventories->chunk(74) as $inventoriesGroup)
+                @foreach($category->inventories->chunk(\App\Models\Pdf::_COUNTONPAGE) as $key => $inventoriesGroup)
                     <div style="background: #fff; padding: 10px 20px;border-radius: 8px; margin: 10px 0;">
-                        @include('layout.pdfInventory',['category'=>$category,'inventories' => $inventoriesGroup])
+                        @include('layout.pdfInventory',['category'=>$category,'inventories' => $inventoriesGroup,'key' => $key, 'page_length' => count($category->inventories->chunk(\App\Models\Pdf::_COUNTONPAGE))])
                     </div>
                 @endforeach
             </div>
