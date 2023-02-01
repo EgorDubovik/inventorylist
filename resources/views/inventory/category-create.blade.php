@@ -67,6 +67,12 @@
                                                     <input type="text" class="form-control customer_phone" placeholder="Phone number" name="customer_phone" value="{{old('customer_phone')}}">
                                                 </div>
                                             </div>
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Email</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control customer_email" placeholder="Email" name="customer_email" value="{{old('customer_email')}}">
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="category-create-address">Address</div>
@@ -74,7 +80,7 @@
                                             <div class="row mb-4">
                                                 <label class="col-sm-2 control-label" for="textinput">Line 1</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" placeholder="Address Line 1" class="form-control" name="street">
+                                                    <input type="text" placeholder="Address Line 1" class="form-control" name="street" value="{{old('street')}}">
                                                 </div>
                                             </div>
 
@@ -82,7 +88,7 @@
                                             <div class="row mb-4">
                                                 <label class="col-sm-2 control-label" for="textinput">City</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" placeholder="City" class="form-control" name="city">
+                                                    <input type="text" placeholder="City" class="form-control" name="city" value="{{old('city')}}">
                                                 </div>
                                             </div>
 
@@ -90,12 +96,12 @@
                                             <div class="row mb-4">
                                                 <label class="col-sm-2 control-label" for="textinput">State</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" placeholder="State" class="form-control" name="state">
+                                                    <input type="text" placeholder="State" class="form-control" name="state" value="{{old('state')}}">
                                                 </div>
 
                                                 <label class="col-sm-2 control-label" for="textinput">Zip</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" placeholder="Post Code" class="form-control" name="zip">
+                                                    <input type="text" placeholder="Post Code" class="form-control" name="zip" value="{{old('zip')}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -118,13 +124,19 @@
                                                     <input type="text" class="form-control dest_customer_phone" placeholder="Phone number" name="dest_customer_phone" value="{{old('dest_customer_phone')}}">
                                                 </div>
                                             </div>
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Email</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control dest_customer_email" placeholder="Email" name="dest_customer_email" value="{{old('dest_customer_email')}}">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="category-create-address">Address</div>
                                         <div style="margin-left: 20px;">
                                             <div class="row mb-4">
                                                 <label class="col-sm-2 control-label" for="textinput">Line 1</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" placeholder="Address Line 1" class="form-control" name="dest_street">
+                                                    <input type="text" placeholder="Address Line 1" class="form-control" name="dest_street" value="{{old('dest_street')}}">
                                                 </div>
                                             </div>
 
@@ -132,7 +144,7 @@
                                             <div class="row mb-4">
                                                 <label class="col-sm-2 control-label" for="textinput">City</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" placeholder="City" class="form-control" name="dest_city">
+                                                    <input type="text" placeholder="City" class="form-control" name="dest_city" value="{{old('dest_city')}}">
                                                 </div>
                                             </div>
 
@@ -140,24 +152,17 @@
                                             <div class="row mb-4">
                                                 <label class="col-sm-2 control-label" for="textinput">State</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" placeholder="State" class="form-control" name="dest_state">
+                                                    <input type="text" placeholder="State" class="form-control" name="dest_state" value="{{old('dest_state')}}">
                                                 </div>
 
                                                 <label class="col-sm-2 control-label" for="textinput">Zip</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" placeholder="Post Code" class="form-control" name="dest_zip">
+                                                    <input type="text" placeholder="Post Code" class="form-control" name="dest_zip" value="{{old('dest_zip')}}">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-{{--                                <div class="row mb-4">--}}
-{{--                                    <label for="inputEmail3" class="col-md-3 form-label">Email</label>--}}
-{{--                                    <div class="col-md-9">--}}
-{{--                                        <input type="address" class="form-control" id="inputEmail3" placeholder="Customer address" name="customer_address" value="{{old('customer_address')}}">--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <button type="submit" class="btn btn-success btn-block">Create</button>
                             </form>
                         </div>
@@ -173,8 +178,10 @@
         function same_as_origin(){
             var name = $('.customer_name').val();
             var phone = $('.customer_phone').val();
+            var email = $('.customer_email').val();
             $('.dest_customer_name').val(name);
             $('.dest_customer_phone').val(phone);
+            $('.dest_customer_email').val(email);
         }
     </script>
 @endsection

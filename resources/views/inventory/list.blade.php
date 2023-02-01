@@ -18,11 +18,19 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="subtitle-creat-category"> ORIGIN INFORMATION</div>
-                                        <div class="row">
+                                        <div class="row mb-4">
                                             <div class="col-md-3 text-muted">Customer name</div>
                                             <div class="col-md-9">{{$category->customer_name}}</div>
                                         </div>
-                                        <div class="row mt-2">
+                                        <div class="row mb-4">
+                                            <div class="col-md-3 text-muted">Phone</div>
+                                            <div class="col-md-9">{{$category->customer_phone}}</div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-3 text-muted">Email</div>
+                                            <div class="col-md-9">{{$category->customer_email}}</div>
+                                        </div>
+                                        <div class="row mb-4 mt-2">
                                             <div class="col-md-3 text-muted">Address</div>
                                             <div class="col-md-9">{{$category->addressM->street}}, {{$category->addressM->city}}, {{$category->addressM->state}} {{$category->addressM->zip}}</div>
                                         </div>
@@ -30,11 +38,19 @@
                                     <div style="border-top: 1px solid #ccc;margin: 20px 0" class="d-md-block d-lg-none"></div>
                                     <div class="col-md-6">
                                         <div class="subtitle-creat-category"> DESTINATION INFORMATION</div>
-                                        <div class="row">
+                                        <div class="row mb-4">
                                             <div class="col-md-3 text-muted">Customer name</div>
                                             <div class="col-md-9">{{$category->dest_customer_name}}</div>
                                         </div>
-                                        <div class="row mt-2">
+                                        <div class="row mb-4">
+                                            <div class="col-md-3 text-muted">Phone</div>
+                                            <div class="col-md-9">{{$category->dest_customer_phone}}</div>
+                                        </div>
+                                        <div class="row mb-4">
+                                            <div class="col-md-3 text-muted">Email</div>
+                                            <div class="col-md-9">{{$category->dest_customer_email}}</div>
+                                        </div>
+                                        <div class="row mb-4 mt-2">
                                             <div class="col-md-3 text-muted">Address</div>
                                             <div class="col-md-9">{{$category->dest_addressM->street}}, {{$category->dest_addressM->city}}, {{$category->dest_addressM->state}} {{$category->dest_addressM->zip}}</div>
                                         </div>
@@ -125,7 +141,7 @@
                             <table class="table border text-nowrap text-md-nowrap table-striped mb-0">
                                 <thead>
                                 <tr>
-                                    <th>Stik number</th>
+                                    <th>Sticker Number</th>
                                     <th>Furniture</th>
                                     <th>Condition</th>
                                     <th>Blankets</th>

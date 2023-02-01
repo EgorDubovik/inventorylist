@@ -26,6 +26,8 @@ class InventoryCategory extends Model
         'dest_customer_name',
         'customer_phone',
         'dest_customer_phone',
+        'customer_email',
+        'dest_customer_email',
         'address',
         'dest_address',
         'order_number',
@@ -57,6 +59,10 @@ class InventoryCategory extends Model
 
     public function accesses(){
         return $this->hasMany(Access::class,'category_id');
+    }
+
+    public function remark(){
+        return $this->hasOne(Remarks::class,'category_id', 'id');
     }
 
 }

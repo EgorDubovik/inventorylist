@@ -108,6 +108,26 @@ ol.nb {
             <p class="cn">{{$category->dest_customer_name}}</p>
         </td>
 	</tr>
+    <tr>
+        <td>
+            <p class="s7" >PHONE NUMBER</p>
+            <p class="cn">{{$category->customer_phone}}</p>
+        </td>
+        <td>
+            <p class="s7" >PHONE NUMBER</p>
+            <p class="cn">{{$category->dest_customer_phone}}</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="s7" >CUSTOMER EMAIL</p>
+            <p class="cn">{{$category->customer_email}}</p>
+        </td>
+        <td>
+            <p class="s7" >CUSTOMER EMAIL</p>
+            <p class="cn">{{$category->dest_customer_email}}</p>
+        </td>
+    </tr>
 	<tr>
 		<td>
             <p class="s7" >STREET ADDRESS</p>
@@ -234,9 +254,7 @@ ol.nb {
 	</tr>
     @endfor
 </table>
-<h3 style="padding-top: 4pt;padding-bottom: 3pt;padding-left: 10pt;text-indent: 0pt;text-align: left;">REMARKS:</h3>
-<div class="hr"></div>
-<div class="hr" style="margin-top: 21px"></div>
+
 <p style="padding-top: 8px;padding-bottom: 2px;padding-left: 9pt;line-height:10px;text-align: left;">THIS IS THE INVENTORY AND DESCRIPTION OF THIS SHIPMENT AT ORIGIN AND DESTINATION. ALL CLAIMS FOR LOSS OR EXTERIOR DAMAGE ARE TO BE SUPPORTED BY EXEPTIONS NOTED ABOVE. “WE HAVE CHECKED ALL THE ITEMS LISTED AND ACKNOWLEDGE THAT THIS IS TRUE AND COMPLETE LIST OF THE GOODS TENDERED AND OF THE STATE OF THE GOODS RECEIVED”
     <p style="padding-left: 9pt;margin-top: -23px">
         <span class="h1" ><br>WARNING  </span>

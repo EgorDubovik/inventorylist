@@ -156,8 +156,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="/category/signature/save" class="sigPad" style="width: 403px; height: 300px; margin: 0 auto;" >
+                    <form method="post" action="/category/signature/save" class="sigPad" style="width: 403px;  margin: 0 auto;" >
                         @csrf
+
+                        <div class="form-group" id="remarks_cont" style="display: none">
+                            <label for="exampleFormControlTextarea1">Remarks</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="remark" rows="3">{!! ($category->remark) ? $category->remark->description : "" !!}</textarea>
+                        </div>
                         <input type="hidden" name="wh" id="wh" value="">
                         <input type="hidden" name="category_id" value="{{$category->id}}">
                         <ul class="sigNav" style="display: block;">
@@ -184,7 +189,11 @@
 
     <script>
         $('.sign-btn').click(function(){
-            $('#wh').val($(this).attr('data-wh'));
+            var datawh = $(this).attr('data-wh');
+            $('#wh').val(datawh);
+            if(datawh == "cusorg" || datawh == "cusdest"){
+                $('#remarks_cont').show();
+            }
         });
 
         $(document).ready(function() {

@@ -61,6 +61,12 @@
                                                     <input type="text" class="form-control customer_phone" placeholder="Phone number" name="customer_phone" value="{{$category->customer_phone}}">
                                                 </div>
                                             </div>
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Email</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control customer_email" placeholder="Email" name="customer_email" value="{{$category->customer_email}}">
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="category-create-address">Address</div>
@@ -110,6 +116,12 @@
                                                 <label class="col-md-2 control-label" >Phone</label>
                                                 <div class="col-md-10">
                                                     <input type="text" class="form-control dest_customer_phone" placeholder="Phone number" name="dest_customer_phone" value="{{$category->dest_customer_phone}}">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <label class="col-md-2 control-label" >Email</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control dest_customer_email" placeholder="Email" name="dest_customer_email" value="{{$category->dest_customer_email}}">
                                                 </div>
                                             </div>
                                         </div>

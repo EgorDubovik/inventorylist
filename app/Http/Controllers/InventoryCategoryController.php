@@ -6,6 +6,7 @@ use App\Models\Access;
 use App\Models\Addresses;
 use App\Models\InventoryCategory;
 use App\Models\InventoryList;
+use App\Models\Remarks;
 use App\Models\Signatures;
 use App\Models\User;
 use PDF;
@@ -64,6 +65,8 @@ class InventoryCategoryController extends Controller
             'tape_lot_number' => 'required',
             'tape_color' => 'required',
             'van_number' => 'required',
+            'customer_email' => 'required',
+            'dest_customer_email' => 'required',
         ]);
 
         $address = Addresses::create([
@@ -93,6 +96,8 @@ class InventoryCategoryController extends Controller
             'tape_lot_number'       => $request->tape_lot_number,
             'tape_color'            => $request->tape_color,
             'van_number'            => $request->van_number,
+            'customer_email'        => $request->customer_email,
+            'dest_customer_email'   => $request->dest_customer_email,
         ]);
 
         return redirect()->route('inventory.list',['category' =>$category->id])->with('successful', 'Inventory category hass bed created successful');
@@ -144,10 +149,12 @@ class InventoryCategoryController extends Controller
             'tape_lot_number' => 'required',
             'tape_color' => 'required',
             'van_number' => 'required',
+            'customer_email' => 'required',
+            'dest_customer_email' => 'required',
         ]);
 
         $category->update([
-        'customer_name'             => $request->customer_name,
+            'customer_name'         => $request->customer_name,
             'customer_phone'        => $request->customer_phone,
             'dest_customer_name'    => $request->dest_customer_name,
             'dest_customer_phone'   => $request->dest_customer_phone,
@@ -155,6 +162,8 @@ class InventoryCategoryController extends Controller
             'tape_lot_number'       => $request->tape_lot_number,
             'tape_color'            => $request->tape_color,
             'van_number'            => $request->van_number,
+            'customer_email'        => $request->customer_email,
+            'dest_customer_email'   => $request->dest_customer_email,
         ]);
 
         $category->addressM()->update([
@@ -172,7 +181,7 @@ class InventoryCategoryController extends Controller
         ]);
 
 
-        return redirect()->route('categories')->with('successful','Category has been update successful');
+        return redirect()->route('inventory.list',['category' => $category])->with('successful','Category has been updated successful');
     }
 
     /**
@@ -196,7 +205,14 @@ class InventoryCategoryController extends Controller
             'wh' => 'required'
         ]);
 
-        Signatures::create([
+        if ($request->remark){
+            Remarks::updateOrCreate(
+                ['category_id' => $request->category_id],
+                ['description' => $request->remark]
+            );
+        }
+
+        Signatures::updateOrCreate([
             'category_id' => $request->category_id,
             'signature' => $request->base64,
             'wh' => $request->wh,
