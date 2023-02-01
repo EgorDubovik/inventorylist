@@ -6,12 +6,6 @@
         <!-- PAGE-HEADER -->
         <div class="page-header">
             <h1 class="page-title">Inventory list for <span style="color:#9f9f9f;">{{$category->customer_name}}</span></h1>
-            <div>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Apps</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Inventory list</li>
-                </ol>
-            </div>
         </div>
         <!-- PAGE-HEADER END -->
         <!-- CONTENT -->
@@ -123,7 +117,7 @@
                         <div class="card-header">
                             Inventory list
                             @can('create-inventory', $category)
-                                <a href="/inventory/create" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#input-modal" style="margin-left: 20px;"><i class="fa fa-plus"></i> Add new furniture</a>
+                                <a href="/inventory/create" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#input-modal" style="margin-left: 20px;"><i class="fa fa-plus"></i> ADDD NEW ITEM</a>
                             @endcan
                             <a style="margin-left: 20px;" href="{{route('view.category', ['category'=>$category->id])}}" class="btn btn-success"><i class="fa fa-eye"></i> <span class="d-none d-lg-inline">view</span></a>
                         </div>
@@ -182,7 +176,7 @@
                     <div class="mb-3">
                         <div class="form-row">
                             <div class="form-group col-6">
-                                <label for="lale-number-f" class="col-form-label">Label number:</label>
+                                <label for="lale-number-f" class="col-form-label">Sticker Number:</label>
                                 <input type="text" class="form-control" id="label-number-f" name="label_number" value="{{($category->inventories->last()) ? ($category->inventories->last()->number+1) : 1}}">
                             </div>
                             <div class="form-group col-6">
