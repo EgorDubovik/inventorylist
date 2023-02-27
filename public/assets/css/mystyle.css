@@ -38,3 +38,16 @@
     font-size: 20px;
     color: #6c5ffc
 }
+.title_remarks{
+    font-size: 18px;
+    font-weight: bold;
+}
+.title_remarks span{
+    font-size: 11px;
+    font-weight: normal;
+}
+.text-remarks{
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 10px;
+}

@@ -43,6 +43,19 @@
                         @include('layout.pdfInventory',['category'=>$category,'inventories' => $inventoriesGroup,'key' => $key, 'page_length' => count($category->inventories->chunk(\App\Models\Pdf::_COUNTONPAGE))])
                     </div>
                 @endforeach
+                <div style="background: #fff; padding: 10px 20px;border-radius: 8px; margin: 10px 0;">
+                    @if($category->remark)
+                    <div class="title_remarks">Remarks <span class="text-muted">Update at {{$category->remark->updated_at}}</span> </div>
+                    <p class="text-remarks">
+                        {{$category->remark->description}}
+                    </p>
+                    @else
+                        <div class="title_remarks">Remarks</div>
+                        <p class="text-remarks text-muted">
+                            Add remarks on signature pad
+                        </p>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="row">
@@ -160,7 +173,7 @@
                         @csrf
 
                         <div class="form-group" id="remarks_cont" style="display: none">
-                            <label for="exampleFormControlTextarea1">Remarks</label>
+                            <h2 style="text-align: left">Add remarks</h2>
                             <textarea class="form-control" id="exampleFormControlTextarea1" name="remark" rows="3">{!! ($category->remark) ? $category->remark->description : "" !!}</textarea>
                         </div>
                         <input type="hidden" name="wh" id="wh" value="">
