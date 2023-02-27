@@ -26,10 +26,16 @@ class InventoryCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $category = InventoryCategory::where('company_id',Auth::user()->company_id)->orderByDesc('created_at') ->get();
-        return view('inventory.category-list', ['category' => $category]);
+        if ($request->has("search")){
+            $category = InventoryCategory::where('order_number', 'LIKE', $request->search)
+                ->orWhere('customer_name', 'LIKE', "%{$request->search}%")
+                ->orderByDesc('created_at') ->get();
+        } else {
+            $category = InventoryCategory::where('company_id',Auth::user()->company_id)->orderByDesc('created_at') ->get();
+        }
+        return view('inventory.category-list', ['category' => $category,"search" => $request->has("search")]);
     }
 
     /**

@@ -231,18 +231,18 @@ ol.nb {
 		<td style="width: 7%"><p class="s10" >EXEPTIONS (IF ANY)<br>AT DESTINATION</p></td>
 	</tr>
 
-    @for($i = $inventories->keys()->first(); $i < (($inventories->count() > 37 ) ? 37+$inventories->keys()->first() : $inventories->count()+$inventories->keys()->first()); $i+=1)
+    @for($i = $inventories->keys()->first(); $i < (($inventories->count() > \App\Models\Pdf::_HELFCOUNTONPAGE ) ? \App\Models\Pdf::_HELFCOUNTONPAGE+$inventories->keys()->first() : $inventories->count()+$inventories->keys()->first()); $i+=1)
     <tr style="height:16pt">
         <td style="text-align: center"><p class="s11" >{{$inventories[$i]->number}}</p></td>
 		<td ><p class="fn" style="text-align: center">{{$inventories[$i]->blankets}}</p></td>
 		<td ><p class="fn">{{$inventories[$i]->furniture_name}}</p></td>
 		<td ><p style="text-align: center">{{$inventories[$i]->condition}}</p></td>
 		<td ><p ><br/></p></td>
-        @if($inventories->count()+$inventories->keys()->first()> $i+37)
-        <td style="text-align: center"><p class="s11" >{{$inventories[$i+37]->number}}</p></td>
-        <td ><p class="fn" style="text-align: center">{{$inventories[$i+37]->blankets}}</p></td>
-        <td ><p class="fn">{{$inventories[$i+37]->furniture_name}}</p></td>
-        <td ><p style="text-align: center">{{$inventories[$i+37]->condition}}</p></td>
+        @if($inventories->count()+$inventories->keys()->first()> $i+\App\Models\Pdf::_HELFCOUNTONPAGE)
+        <td style="text-align: center"><p class="s11" >{{$inventories[$i+\App\Models\Pdf::_HELFCOUNTONPAGE]->number}}</p></td>
+        <td ><p class="fn" style="text-align: center">{{$inventories[$i+\App\Models\Pdf::_HELFCOUNTONPAGE]->blankets}}</p></td>
+        <td ><p class="fn">{{$inventories[$i+\App\Models\Pdf::_HELFCOUNTONPAGE]->furniture_name}}</p></td>
+        <td ><p style="text-align: center">{{$inventories[$i+\App\Models\Pdf::_HELFCOUNTONPAGE]->condition}}</p></td>
         <td ><p ><br/></p></td>
         @else
         <td style="text-align: center"><p class="s11"></p></td>

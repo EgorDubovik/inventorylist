@@ -10,4 +10,6 @@ class Pdf extends Model
     use HasFactory;
 
     public CONST _COUNTONPAGE = 74;
+    public CONST _HELFCOUNTONPAGE = 36;
+
 }

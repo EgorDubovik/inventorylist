@@ -5,18 +5,31 @@
     <div class="main-container container-fluid">
         <!-- PAGE-HEADER -->
         <div class="page-header">
-            <h1 class="page-title">Inventory category</h1>
+            <h1 class="page-title">Inventory category @can('create', \App\Models\InventoryCategory::class)
+                    <a href="{{route('category.create')}}" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Create new inventory category</a>
+                @endcan</h1>
         </div>
         <!-- PAGE-HEADER END -->
         <!-- CONTENT -->
-        <div class="row mb-2">
-            <div class="col-4">
-                @can('create', \App\Models\InventoryCategory::class)
-                    <a href="{{route('category.create')}}" class="btn btn-success" style="margin-left: 20px;"><i class="fa fa-plus"></i> Create new inventory category</a>
-                @endcan
+        <hr style="border-bottom: 1px solid #ccc">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="get">
+                    @csrf
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" id="search_bar" name="search" class="form-control" placeholder="Search in orders" value="{{ app('request')->input('search') }}">
+                            <button class="btn btn-secondary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                @if($search)
+                    <div style="margin-left: 20px;margin-bottom: 20px;"><a href="/category">Go Back</a></div>
+                @endif
             </div>
         </div>
-        <hr style="border-bottom: 1px solid #ccc">
         <div class="row">
 
             <div class="col-12">
