@@ -22,4 +22,8 @@ class InventoryList extends Model
     public function category(){
         return $this->belongsTo(InventoryCategory::class);
     }
+
+    public function images(){
+        return $this->hasMany(InventoryImages::class, 'inventory_id');
+    }
 }

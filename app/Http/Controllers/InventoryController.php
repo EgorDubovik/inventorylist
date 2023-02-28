@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\InventoryCategory;
+use App\Models\InventoryImages;
 use App\Models\InventoryList;
 use App\Models\Item;
-use App\Models\Signatures;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class InventoryController extends Controller
 {
@@ -89,6 +93,42 @@ class InventoryController extends Controller
 
         return redirect()->route('inventory.list',['category' => $inventory->category->id]);
 
+    }
+
+    public function images_upload(InventoryList $inventory){
+        $this->authorize('update-inventory', $inventory->category);
+        return view('inventory.images-uploads',['inventory' => $inventory]);
+    }
+
+    public function images_store(Request $request, InventoryList $inventory){
+
+        $this->authorize('update-inventory', $inventory->category);
+
+        $request->validate([
+            'images.*' => 'required|image|mimes:jpeg,png,jpg'
+        ]);
+
+        $pictures = $request->file('images');
+        foreach ($pictures as $picture) {
+            $fileName = time() . '_' . $picture->getClientOriginalName();
+            $image = Image::make($picture);
+            if ($image->width() > env('UPLOAD_WIDTH_SIZE'))
+                $image->resize(env('UPLOAD_WIDTH_SIZE'), null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            $image->save(storage_path('app/public/images/'.$fileName));
+            InventoryImages::create([
+                'inventory_id'   => $inventory->id,
+                'path'           => 'storage/images/' . $fileName,
+                'creator_id'     => Auth::user()->id,
+            ]);
+        }
+        return back();
+    }
+
+    public function view_image(Request $request, InventoryImages $image, $filename){
+        Gate::authorize('show-images',['image' => $image]);
+        return Image::make(storage_path('app/public/images/'.$filename))->response();
     }
 
 }

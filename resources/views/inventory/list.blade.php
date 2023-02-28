@@ -157,9 +157,11 @@
                                         <td>{{$inventory->blankets}}</td>
                                         <td>
                                             @can('update-inventory', $category)
+
                                                 <form method="post" action="/inventory/destroy/{{$inventory->id}}" onsubmit="remove_item(this);return false;">
                                                     @csrf
                                                     @method('delete')
+                                                    <a href="{{route('inventory.images.uploads',['inventory'=>$inventory->id])}}" class="btn btn-primary"><i class="fa fa-image"></i><span class="d-none d-lg-inline"> Images</span></a>
                                                     <a href="/inventory/edit/{{$inventory->id}}" class="btn btn-warning"><i class="fa fa-edit"></i><span class="d-none d-lg-inline"> Edit</span></a>
                                                     <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> <span class="d-none d-lg-inline">Remove </span></button>
                                                 </form>

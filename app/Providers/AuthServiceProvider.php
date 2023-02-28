@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\InventoryCategory;
+use App\Models\InventoryImages;
 use App\Models\Item;
 use App\Models\Role;
 use App\Models\User;
@@ -77,6 +78,12 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('item-remove',function (User $user, Item $item){
             return (in_array(Role::ADMIN,$user->roles->pluck('role')->toArray()) && $user->company_id == $item->company_id );
+        });
+
+        Gate::define('show-images', function (User $user, InventoryImages $image) {
+            if ($user->company_id == $image->owner->company_id)
+                return true;
+            return false;
         });
 
     }

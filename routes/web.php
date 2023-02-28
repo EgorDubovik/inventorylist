@@ -71,6 +71,10 @@ Route::group(['middleware' => ['auth','active']],function (){
        Route::delete('/destroy/{inventoryList}', [InventoryController::class, 'destroy']);
        Route::get('/edit/{inventory}' ,[InventoryController::class, 'edit']);
        Route::post('/edit/{inventory}' ,[InventoryController::class, 'update']);
+       // Images for inventory
+       Route::get('/images/uploads/{inventory}', [InventoryController::class, 'images_upload'])->name('inventory.images.uploads');
+       Route::post('/images/store/{inventory}', [InventoryController::class, 'images_store'])->name('inventory.images.store');
+       Route::get('{image}/storage/images/{filename}', [InventoryController::class,'view_image'])->name('inventory.image.view');
    });
 
    Route::prefix('settings')->group(function (){
